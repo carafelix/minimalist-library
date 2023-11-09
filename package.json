@@ -1,0 +1,11 @@
+{ "scripts": {    
+
+    "tsc": "tsc -p ./ -w",
+    "sass": "sass --watch src/sass:out/css",
+    "watch": "concurrently \"npm run tsc\" \"npm run sass\""
+  },
+
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
