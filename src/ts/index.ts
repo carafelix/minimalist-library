@@ -26,19 +26,20 @@ class Book{
         this.isbn = isbn;
     }
 }
-const harryPotter = new Book('Harry el Potter', 'La muchacha', true)
 
 const mainLibrary = new Library,
       sideLibrary = new Library;
 
-      mainLibrary.storage.push(harryPotter)
-
-      console.log(sideLibrary)
-      console.log(mainLibrary)
 
 
+const googleApiKey = 'AIzaSyBbLoGrfBpVZrXlPHSeFkLniUZzG0o8NI8'
 
 
+const test = fetch(`https://www.googleapis.com/books/v1/volumes?q=search+terms&key=${googleApiKey}`,{
+    method: 'GET'
+})
+
+test.then((c)=>console.log(c))
 
 
 

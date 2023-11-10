@@ -34,7 +34,8 @@
             "console": "integratedTerminal",
             "skipFiles": [
               "${workspaceFolder}/node_modules/**/*.js"
-            ]
+            ],
+            "preLaunchTask": "tsc: build - tsconfig.json",
           }
     ]
 }
