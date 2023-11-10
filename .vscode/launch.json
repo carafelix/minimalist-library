@@ -6,36 +6,29 @@
     "configurations": [
         
         {
-            "name": "Launch index.html",
+            "name": "Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}",
+            "file": "${workspaceFolder}/index.html",
+        },
+        
+
+        {
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "file": "${workspaceFolder}/index.html"
+            "name": "Firefox File",
+            "file": "${workspaceFolder}/index.html",
+            "tmpDir": "${workspaceFolder}/tmp"
+
         },
-        {
-            "name": "Launch localhost",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "url": "http://localhost/index.html",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Attach",
-            "type": "firefox",
-            "request": "attach"
-        },
-        {
-            "name": "Launch WebExtension",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "addonPath": "${workspaceFolder}"
-        },
+        
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug TypeScript",
+            "name": "TS-TypeScript",
             "program": "${workspaceFolder}/src/ts/index.ts",
             "outFiles": ["${workspaceFolder}/out/js/index.js"],
             "console": "integratedTerminal",
