@@ -28,7 +28,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "TS-TypeScript",
+            "name": "Node-TS",
             "program": "${workspaceFolder}/src/ts/index.ts",
             "outFiles": ["${workspaceFolder}/out/js/index.js"],
             "console": "integratedTerminal",
