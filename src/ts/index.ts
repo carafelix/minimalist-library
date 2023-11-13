@@ -1,12 +1,12 @@
 import fs from 'fs'
 class Library{
     public storage : Book[]
-    private prince : string
+    private check : string
     constructor(
         public name : string
     ){
         this.storage = []
-        this.prince = 'proust'
+        this.check = Library.toString()
     }
 }
 
@@ -80,7 +80,7 @@ function isHouse(urlArgs : URLSearchParams){
     for(const room of house){
         if(typeof room.name !== 'string'        ||
            room.storage.constructor !== Array   ||
-           room.prince !== 'proust'){
+           room.check !== Library.toString()){
             return false
         }
     }
