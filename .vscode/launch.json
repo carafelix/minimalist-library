@@ -31,7 +31,7 @@
             "name": "Node-TS",
             "program": "${workspaceFolder}/src/ts/index.ts",
             "outFiles": ["${workspaceFolder}/out/js/index.js"],
-            "console": "integratedTerminal",
+            // "console": "integratedTerminal",
             "skipFiles": [
               "${workspaceFolder}/node_modules/**/*.js"
             ],

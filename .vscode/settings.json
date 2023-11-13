@@ -5,7 +5,12 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        ".$library-flow.drawio.dtmp": true,
+        ".$library-flow.drawio.bkp": true
     },
-    "hide-files.files": []
+    "hide-files.files": [
+        ".$library-flow.drawio.dtmp",
+        ".$library-flow.drawio.bkp"
+    ]
 }
