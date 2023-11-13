@@ -2,6 +2,7 @@ import fs from 'fs'
 class Library{
     public storage : Book[]
     private check : string
+
     constructor(
         public name : string
     ){
@@ -53,11 +54,7 @@ async function testi(){
 const urlParams = new URLSearchParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 
-const house : Library[] = (
-    (isHouse(urlParams))    ? JSON.parse(urlParams.get('house')!)    : 
-    (cachedHouse)           ? cachedHouse                            :
-    [mainLibrary]
-)
+const house : Library[] = ( isHouse(urlParams) || cachedHouse || [mainLibrary] )
 
 localStorage.setItem('house', JSON.stringify(house));
 
@@ -84,17 +81,23 @@ function isHouse(urlArgs : URLSearchParams){
             return false
         }
     }
-    return true
+
+    return house
+}
+
+// Reintroduce Classes into parsed objects from Cache or URL 
+
+for(const libraries of house){  
+    Object.setPrototypeOf(libraries, Library.prototype)
+
+    for(const book of libraries.storage){
+        Object.setPrototypeOf(book, Book.prototype)
+    }
 }
 
 
+
 const encodedHouse = encodeURIComponent(JSON.stringify(house)) 
-
-
-
-
-
-
 
 
 
