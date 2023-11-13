@@ -1,0 +1,52 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "rCDJuQEACAAJ",
+      "etag": "1HXCMobprdU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/rCDJuQEACAAJ",
+      "volumeInfo": {
+        "title": "Antología rokhiana",
+        "authors": ["Pablo de Rokha"],
+        "publishedDate": "2016",
+        "industryIdentifiers": [
+          { "type": "ISBN_10", "identifier": "9568268995" },
+          { "type": "ISBN_13", "identifier": "9789568268992" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 400,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=rCDJuQEACAAJ&dq=isbn:9789568268992&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=rCDJuQEACAAJ&dq=isbn:9789568268992&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Antolog%C3%ADa_rokhiana.html?hl=&id=rCDJuQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=rCDJuQEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ]
+}

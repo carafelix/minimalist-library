@@ -1,46 +1,94 @@
+import fs from 'fs'
 class Library{
-    storage: Book[]
-
-    constructor(){
+    public storage : Book[]
+    private prince : string
+    constructor(
+        public name : string
+    ){
         this.storage = []
+        this.prince = 'proust'
     }
 }
 
 class Book{
-
-    title: string;
-    author : string;
-    read : boolean
-    pages? : number;
-    genre? : string[] | undefined;
-    readDate? : Date | undefined;
-    isbn?: string | undefined
-    
-    constructor(title :string , author : string, read : boolean, pages? : number, genre? : string[] , readDate? : Date, isbn?: string ){
-        this.title = title
-        this.author = author,
-        this.read = read;
-        this.pages = pages;
-        this.genre = genre,
-        this.readDate = readDate,
-        this.isbn = isbn;
-    }
+    constructor(
+        public title :string , 
+        public author : string, 
+        public read : boolean, 
+        public pages? : number, 
+        public genre? : string[] , 
+        public readDate? : Date, 
+        public isbn?: string ){
+            // === this.var = var;
+        }
 }
 
-const mainLibrary = new Library,
-      sideLibrary = new Library;
+const mainLibrary = new Library('main'),
+      testLibrary = new Library('test');
+
+      
 
 
 
 const googleApiKey = 'AIzaSyBbLoGrfBpVZrXlPHSeFkLniUZzG0o8NI8'
+const test_isbn = '9789568268992'
+const inputText = 'Lezama+Lima+Paradiso'
 
 
-const test = fetch(`https://www.googleapis.com/books/v1/volumes?q=search+terms&key=${googleApiKey}`,{
-    method: 'GET'
-})
 
-test.then((c)=>console.log(c))
+async function testi(){
 
+    // const test_via_isbn = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${test_isbn}&key=${googleApiKey}`,{
+    //     method: 'GET'
+    // })
+
+    const test_search = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${inputText}&key=${googleApiKey}`,{
+        method: 'GET'
+    })
+
+    // fs.writeFileSync('/media/martincito/freedom/repos/minimalist-library/tmp/_response.json', JSON.stringify(await test_search.json()))
+}
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const cachedHouse = JSON.parse(localStorage.getItem('house')!)
+
+const house : Library[] = (
+    (isHouse(urlParams))    ? JSON.parse(urlParams.get('house')!)    : 
+    (cachedHouse)           ? cachedHouse                            :
+    [mainLibrary]
+)
+
+localStorage.setItem('house', JSON.stringify(house));
+
+
+function isHouse(urlArgs : URLSearchParams){
+    const encodedStr = urlArgs.get('house')
+    if(!encodedStr) return false;
+    const decodedStr = decodeURIComponent(encodedStr);
+
+    try {
+        JSON.parse(decodedStr)
+    } catch (err) {
+        if (err){
+            console.log(err);
+            return false;
+        }
+    }
+    const house = JSON.parse(decodedStr);
+
+    for(const room of house){
+        if(typeof room.name !== 'string'        ||
+           room.storage.constructor !== Array   ||
+           room.prince !== 'proust'){
+            return false
+        }
+    }
+    return true
+}
+
+
+const encodedHouse = encodeURIComponent(JSON.stringify(house)) 
 
 
 
@@ -144,4 +192,3 @@ const bookGenres = [
     "Encyclopedia",
     "Dictionaries",
   ];
-  

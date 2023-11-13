@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         
         {
             "name": "Chrome",
@@ -13,7 +14,6 @@
             "webRoot": "${workspaceFolder}",
             "file": "${workspaceFolder}/index.html",
         },
-        
 
         {
             "type": "firefox",
@@ -21,7 +21,7 @@
             "reAttach": true,
             "name": "Firefox File",
             "file": "${workspaceFolder}/index.html",
-            "tmpDir": "${workspaceFolder}/tmp"
+            "tmpDir": "${workspaceFolder}/tmp",
 
         },
         

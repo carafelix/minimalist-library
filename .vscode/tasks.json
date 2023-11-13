@@ -16,6 +16,6 @@
                 "revealProblems": "onProblem",
                 "close": true
             }
-        }
+        } // adding configs here should make ctrl+shift+b show more build options. It detects npm scripts
     ]
 }

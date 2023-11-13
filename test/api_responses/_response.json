@@ -1,0 +1,545 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1145,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "1ckwlhyxDP0C",
+      "etag": "JFDkoL7E+UE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1ckwlhyxDP0C",
+      "volumeInfo": {
+        "title": "Paradiso",
+        "subtitle": "edición crítica",
+        "authors": ["José Lezama Lima"],
+        "publisher": "Editorial Universidad de Costa Rica",
+        "publishedDate": "1996",
+        "description": "Paradiso es, en principio, el viaje ritual que Dante Alighieri cumple en la Divina Comedia, al tener que descender a los infiernos Para luego reaparecer dejando en prenda su luz en la oscuridad. Esto hace de Paradiso una obra aut nticamente dentro de la tradici n rfica. la edici n cr tica de esta obra fundamental de la literatura latinoamericana est coordinada por Cintio Vitier y participan en el an lisis de la obra: Ciro Bianchi Ross, Raquel Carri , Julio Ortega, Benito Pelegr n, Severo Sarduy, Justo C. Ulloa y Mar a Zambrano, entre otros.",
+        "industryIdentifiers": [
+          { "type": "ISBN_10", "identifier": "8489666024" },
+          { "type": "ISBN_13", "identifier": "9788489666023" }
+        ],
+        "readingModes": { "text": false, "image": true },
+        "pageCount": 872,
+        "printType": "BOOK",
+        "averageRating": 4,
+        "ratingsCount": 3,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "3.6.4.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1ckwlhyxDP0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1ckwlhyxDP0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=1ckwlhyxDP0C&printsec=frontcover&dq=Lezama+Lima+Paradiso&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=1ckwlhyxDP0C&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Paradiso.html?hl=&id=1ckwlhyxDP0C"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Paradiso-sample-pdf.acsm?id=1ckwlhyxDP0C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1ckwlhyxDP0C&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Paradiso es, en principio, el viaje ritual que Dante Alighieri cumple en la Divina Comedia, al tener que descender a los infiernos Para luego reaparecer dejando en prenda su luz en la oscuridad."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "er9JAAAAYAAJ",
+      "etag": "vtzBiWlg+qk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/er9JAAAAYAAJ",
+      "volumeInfo": {
+        "title": "Diccionario de símbolos y personajes",
+        "subtitle": "en Paradiso y Oppiano Licario de José Lezama Lima",
+        "authors": ["Maximino Cacheiro Varela"],
+        "publishedDate": "2001",
+        "description": "Estudio a fondo de los símbolos y personajes que aparecen en Paradiso y en Oppiano Licario",
+        "industryIdentifiers": [
+          { "type": "OTHER", "identifier": "UTEXAS:059173006534670" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 244,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.3.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=er9JAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=er9JAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=er9JAAAAYAAJ&dq=Lezama+Lima+Paradiso&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=er9JAAAAYAAJ&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Diccionario_de_s%C3%ADmbolos_y_personajes.html?hl=&id=er9JAAAAYAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=er9JAAAAYAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Estudio a fondo de los símbolos y personajes que aparecen en Paradiso y en Oppiano Licario"
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "YvJPswEACAAJ",
+      "etag": "2ynPCw2YQU0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/YvJPswEACAAJ",
+      "volumeInfo": {
+        "title": "Paradiso",
+        "authors": ["José Lezama Lima"],
+        "publishedDate": "2016",
+        "industryIdentifiers": [
+          { "type": "ISBN_10", "identifier": "9591021399" },
+          { "type": "ISBN_13", "identifier": "9789591021397" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 536,
+        "printType": "BOOK",
+        "categories": ["Cuban fiction"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=YvJPswEACAAJ&dq=Lezama+Lima+Paradiso&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=YvJPswEACAAJ&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Paradiso.html?hl=&id=YvJPswEACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=YvJPswEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "X65WAAAAYAAJ",
+      "etag": "GHEo9POhIdM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/X65WAAAAYAAJ",
+      "volumeInfo": {
+        "title": "La visión jubilosa de José Lezama Lima",
+        "subtitle": "un estudio sobre Paradiso y otras obras en prosa",
+        "authors": ["Gustavo Pellon"],
+        "publishedDate": "2005",
+        "industryIdentifiers": [
+          { "type": "OTHER", "identifier": "UVA:X030239867" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 204,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=X65WAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=X65WAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=X65WAAAAYAAJ&q=Lezama+Lima+Paradiso&dq=Lezama+Lima+Paradiso&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=X65WAAAAYAAJ&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/La_visi%C3%B3n_jubilosa_de_Jos%C3%A9_Lezama_Lima.html?hl=&id=X65WAAAAYAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=X65WAAAAYAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "AvIsAAAAMAAJ",
+      "etag": "kj3+K0NuX8s",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/AvIsAAAAMAAJ",
+      "volumeInfo": {
+        "title": "El \"Paradiso\" de Lezama Lima",
+        "subtitle": "(elucidación crítica)",
+        "authors": ["Carmen Ruiz Barrionuevo"],
+        "publishedDate": "1980",
+        "industryIdentifiers": [
+          { "type": "OTHER", "identifier": "UOM:39015005016814" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 138,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=AvIsAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=AvIsAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=AvIsAAAAMAAJ&q=Lezama+Lima+Paradiso&dq=Lezama+Lima+Paradiso&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=AvIsAAAAMAAJ&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/El_Paradiso_de_Lezama_Lima.html?hl=&id=AvIsAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=AvIsAAAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "AKi1DwAAQBAJ",
+      "etag": "hgoqM2YrVD8",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/AKi1DwAAQBAJ",
+      "volumeInfo": {
+        "title": "Paradiso",
+        "subtitle": "Obras completas",
+        "authors": ["José Lezama Lima"],
+        "publisher": "RUTH",
+        "publishedDate": "2016-06-15",
+        "description": "Golpe maestro, jaque mate al hado, es, según reconoce Virgilio Piñera, Paradiso, esta gran novela de José Lezama Lima. Y en efecto, desde su aparición, este libro ha causado sucesivas conmociones, como si reclamase impetuosamente un lugar en las letras hispanoamericanas. Abrumados por su espíritu de totalidad, hemos balbuceado calificativos como \"novela de aprendizaje\", \"novela-resumen\", \"anales del desarrollo de una mente\". Todos —lo intuimos— resultan deficientes. La cultura entendida como imagen y como filosofía; como historia e incluso como costumbre, puede ser una de las atribuciones de Paradiso. Otra sería el vastísimo estilo lezamiano, en el que, ciertamente, no hay nada que no sea esto, y no hay nada que no sea aquello. Libro inagotable, si esa sublime entelequia fuese posible, nos invita al conocimiento, a la sensualidad, a una perenne ironía.",
+        "industryIdentifiers": [
+          { "type": "ISBN_13", "identifier": "9789591020277" },
+          { "type": "ISBN_10", "identifier": "9591020279" }
+        ],
+        "readingModes": { "text": true, "image": true },
+        "pageCount": 970,
+        "printType": "BOOK",
+        "categories": ["Literary Collections"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.3.3.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=AKi1DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=AKi1DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=AKi1DwAAQBAJ&printsec=frontcover&dq=Lezama+Lima+Paradiso&hl=&cd=6&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=AKi1DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=AKi1DwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": { "amount": 7900, "currencyCode": "CLP" },
+        "retailPrice": { "amount": 7900, "currencyCode": "CLP" },
+        "buyLink": "https://play.google.com/store/books/details?id=AKi1DwAAQBAJ&rdid=book-AKi1DwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 7900000000,
+              "currencyCode": "CLP"
+            },
+            "retailPrice": {
+              "amountInMicros": 7900000000,
+              "currencyCode": "CLP"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Paradiso-sample-epub.acsm?id=AKi1DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Paradiso-sample-pdf.acsm?id=AKi1DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=AKi1DwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Golpe maestro, jaque mate al hado, es, según reconoce Virgilio Piñera, Paradiso, esta gran novela de José Lezama Lima."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "Gx6NwwEACAAJ",
+      "etag": "Z3qACPVz91g",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Gx6NwwEACAAJ",
+      "volumeInfo": {
+        "title": "Paradiso",
+        "authors": ["José Lezama Lima"],
+        "publishedDate": "1985",
+        "industryIdentifiers": [
+          { "type": "OTHER", "identifier": "OCLC:1025224553" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 490,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=Gx6NwwEACAAJ&dq=Lezama+Lima+Paradiso&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=Gx6NwwEACAAJ&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Paradiso.html?hl=&id=Gx6NwwEACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=Gx6NwwEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "1UyqrQoPPmcC",
+      "etag": "2R3TfYNq/0E",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1UyqrQoPPmcC",
+      "volumeInfo": {
+        "title": "Paradiso",
+        "authors": ["José Lezama Lima"],
+        "publisher": "Ediciones Era",
+        "publishedDate": "1968",
+        "description": "\"A classic of modern literature, Paradiso was first published in Cuba in 1966. Written by Cuba's most important poet, it tells the story of Jose Cemi, who, in the wake of his father's death, comes of age in turn-of-the-century Cuba. Weaving the exhilarations and defeats of love into extraordinarily erotic verbal tapestries, Lezama Lima narrates Cemi's search for his dead father and for an understanding of love and the powers of the mind.\"--Jacket",
+        "industryIdentifiers": [
+          { "type": "ISBN_10", "identifier": "9684112041" },
+          { "type": "ISBN_13", "identifier": "9789684112049" }
+        ],
+        "readingModes": { "text": false, "image": true },
+        "pageCount": 516,
+        "printType": "BOOK",
+        "categories": ["Cuba"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.5.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1UyqrQoPPmcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1UyqrQoPPmcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=1UyqrQoPPmcC&printsec=frontcover&dq=Lezama+Lima+Paradiso&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=1UyqrQoPPmcC&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Paradiso.html?hl=&id=1UyqrQoPPmcC"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Paradiso-sample-pdf.acsm?id=1UyqrQoPPmcC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1UyqrQoPPmcC&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Si hay una novela en lengua española del siglo XX de cuyo genio nadie puede dudar, ésa es Paradiso."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "0YaEXwAACAAJ",
+      "etag": "e9iyZkKZfp4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/0YaEXwAACAAJ",
+      "volumeInfo": {
+        "title": "Recursos neobarrocos en la novela \"Paradiso\" de José Lezama Lima",
+        "authors": [
+          "César Rodríguez de Sepúlveda y Pardo",
+          "Carmen Ruíz Barrionuevo"
+        ],
+        "publishedDate": "1993",
+        "industryIdentifiers": [
+          { "type": "OTHER", "identifier": "OCLC:645019272" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 472,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=0YaEXwAACAAJ&dq=Lezama+Lima+Paradiso&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=0YaEXwAACAAJ&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Recursos_neobarrocos_en_la_novela_Paradi.html?hl=&id=0YaEXwAACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=0YaEXwAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "a6wHAQAAIAAJ",
+      "etag": "O26607XDU+0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/a6wHAQAAIAAJ",
+      "volumeInfo": {
+        "title": "Paradiso y el sistema poético de Lezama Lima",
+        "authors": ["Margarita Junco Fazzolari"],
+        "publishedDate": "1979",
+        "industryIdentifiers": [
+          { "type": "OTHER", "identifier": "STANFORD:36105035519722" }
+        ],
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 194,
+        "printType": "BOOK",
+        "categories": ["Authors, Cuban"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=a6wHAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=a6wHAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=a6wHAQAAIAAJ&q=Lezama+Lima+Paradiso&dq=Lezama+Lima+Paradiso&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=a6wHAQAAIAAJ&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Paradiso_y_el_sistema_po%C3%A9tico_de_Lezama.html?hl=&id=a6wHAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=a6wHAQAAIAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ]
+}
