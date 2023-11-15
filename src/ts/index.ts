@@ -1,29 +1,36 @@
+localStorage.clear()
 class Library{
     public storage : Book[]
-    private password : string | undefined
     constructor(
-        public name : string
+        public name : string,
+        private password? : string
+
     ){
         this.storage = []
-        this.password = undefined
     }
 
-    addBook(b:Book){
+    addBook = (b:Book) => {
+        this.storage.push(b);
+    }
+    deleteBook = (b:Book) => {
+        const index = this.storage.indexOf(b)
+        this.storage.splice(index,1);
+    }
+
+    getBookFromID = () => {
         
     }
-    deleteBook(b:Book){
-        
-    }
-    setPassword(){
+
+    setPassword = () => {
 
     }
-    changePassword(){
+    changePassword = () => {
 
     }
-    deletePassword(){
+    deletePassword = () => {
 
     }
-    forgotPassword(){
+    forgotPassword = () => {
 
     }
 }
@@ -31,11 +38,13 @@ class Library{
 class House extends Array<Library>{
     
     addLibrary = (l:Library) => {
-        return this.indexOf(l);
+        this.push(l);
     }
     removeLibrary(l:Library){
-
+        const index = this.indexOf(l);
+        this.splice(index,1);
     }
+    
     clearHouse(){ // Removes all data
         localStorage.clear()
         window.location.reload();
@@ -43,6 +52,7 @@ class House extends Array<Library>{
 }
 
 class Book{
+    public id;
     constructor(
         public title :string , 
         public author : string, 
@@ -51,7 +61,23 @@ class Book{
         public genre? : string[] , 
         public readDate? : Date, 
         public isbn?: string ){
+            this.id = this.setId()
         }
+
+    setId = async () => {
+                    const str = (    
+                        this.title                           +
+                        this.author                          +
+                        this.read                            +
+                        (this.pages ? this.pages : '') +
+                        (this.genre ? this.genre : '') +
+                        (this.readDate ? this.readDate : '') +
+                        (this.isbn ? this.isbn : '') 
+                        )
+                    
+                       
+                        
+    }
 }
 
 class URLHouseParams extends URLSearchParams{
@@ -82,7 +108,9 @@ class URLHouseParams extends URLSearchParams{
 }
 
 const mainLibrary = new Library('main'),
-      testLibrary = new Library('test');
+      testLibrary = new Library('test'),
+      xxxLibrary  = new Library('xxx');
+
 
 
 /** Main Flow **/
@@ -91,7 +119,14 @@ const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 
 const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
-console.log(house);
+
+const test : House = ( recievedURLParams.isHouse() || cachedHouse || new House() )
+
+test.addLibrary(mainLibrary)
+test.addLibrary(testLibrary)
+test.addLibrary(xxxLibrary)
+
+const harry = new Book('harry el potter','la señora', true)
 
 
 
@@ -104,6 +139,20 @@ for(const libraries of house){
     for(const book of libraries.storage){
         Object.setPrototypeOf(book, Book.prototype)
     }
+}
+
+
+
+
+async function digestPassword(password:string) { // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
+
+  const msgUint8 = new TextEncoder().encode(password);                      // encode as (utf-8) Uint8Array
+  const hashBuffer = await crypto.subtle.digest("SHA-256", msgUint8);       // hash the message
+  const hashArray = Array.from(new Uint8Array(hashBuffer));                 // convert buffer to byte array
+  const hashHex = hashArray
+                            .map((b) => b.toString(16).padStart(2, "0"))
+                            .join("");                                      // convert bytes to hex string
+  return hashHex;
 }
 
 
