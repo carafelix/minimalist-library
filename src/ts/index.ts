@@ -1,29 +1,44 @@
-
-
 class Library{
     public storage : Book[]
-
+    private password : string | undefined
     constructor(
         public name : string
     ){
         this.storage = []
+        this.password = undefined
     }
 
-    addBook(){
+    addBook(b:Book){
+        
+    }
+    deleteBook(b:Book){
+        
+    }
+    setPassword(){
 
     }
-    deleteBook(){
+    changePassword(){
+
+    }
+    deletePassword(){
+
+    }
+    forgotPassword(){
 
     }
 }
 
 class House extends Array<Library>{
     
-    addLibrary(){
+    addLibrary = (l:Library) => {
+        return this.indexOf(l);
+    }
+    removeLibrary(l:Library){
 
     }
-    removeLibrary(){
-
+    clearHouse(){ // Removes all data
+        localStorage.clear()
+        window.location.reload();
     }
 }
 
@@ -75,7 +90,8 @@ const mainLibrary = new Library('main'),
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 
-const house : House = ( recievedURLParams.isHouse() || cachedHouse || [mainLibrary] )
+const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
+console.log(house);
 
 
 
