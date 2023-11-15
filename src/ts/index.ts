@@ -54,29 +54,42 @@ class House extends Array<Library>{
 class Book{
     public id;
     constructor(
-        public title :string , 
-        public author : string, 
-        public read : boolean, 
-        public pages? : number, 
-        public genre? : string[] , 
-        public readDate? : Date, 
-        public isbn?: string ){
+        private title :string , 
+        private author : string, 
+        private read : boolean, 
+        private pages? : number, 
+        private genre? : string[] , 
+        private readDate? : Date, 
+        private isbn?: string ){
             this.id = this.setId()
         }
 
-    setId = async () => {
-                    const str = (    
-                        this.title                           +
-                        this.author                          +
-                        this.read                            +
-                        (this.pages ? this.pages : '') +
-                        (this.genre ? this.genre : '') +
-                        (this.readDate ? this.readDate : '') +
-                        (this.isbn ? this.isbn : '') 
-                        )
-                    
-                       
-                        
+    private setId = () => {
+                    const str = this.title + this.author + this.read;                           
+                    const reduce_Uint8 = (new TextEncoder()).encode(str).reduce((a,b)=>a+b)
+                    return `${reduce_Uint8 + (new Date).getTime()}`
+    }
+
+    getTitle(){
+        return this.title
+    }
+    getAuthor(){
+        return this.author
+    }
+    getRead(){
+        return this.read
+    }
+    getPages(){
+        return this.pages
+    }
+    getGenre(){
+        return this.genre
+    }
+    getReadDate(){
+        return this.readDate
+    }
+    getIsbn(){
+        return this.isbn
     }
 }
 
