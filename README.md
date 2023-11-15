@@ -7,11 +7,9 @@
 
 ## Features
 
-- yet
-- yet
-- yet
-- yet
-- yet
+- URl import of the site state with checker (isHouse) function
+- Librarie can be lock behind passwords
+- Google Books API import
 
 ## Showcase 
 

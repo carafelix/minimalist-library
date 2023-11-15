@@ -1,12 +1,29 @@
+
+
 class Library{
     public storage : Book[]
-    private check : string
 
     constructor(
         public name : string
     ){
         this.storage = []
-        this.check = Library.toString()
+    }
+
+    addBook(){
+
+    }
+    deleteBook(){
+
+    }
+}
+
+class House extends Array<Library>{
+    
+    addLibrary(){
+
+    }
+    removeLibrary(){
+
     }
 }
 
@@ -19,46 +36,49 @@ class Book{
         public genre? : string[] , 
         public readDate? : Date, 
         public isbn?: string ){
-            // === this.var = var;
         }
+}
+
+class URLHouseParams extends URLSearchParams{
+    isHouse = () =>{    // check every function inside every librarie and book to match the prototype
+        const encodedStr = this.get('house')
+        if(!encodedStr) return false;
+        const decodedStr = decodeURIComponent(encodedStr);
+    
+        try {
+            JSON.parse(decodedStr)
+        } catch (err) {
+            if (err){
+                console.log(err);
+                return false;
+            }
+        }
+        const house = JSON.parse(decodedStr);
+    
+        for(const room of house){
+            if(typeof room.name !== 'string'        ||
+               room.storage.constructor !== Array   ||
+               room.check !== Library.toString()){
+                return false
+            }
+        }
+        return house
+    }
 }
 
 const mainLibrary = new Library('main'),
       testLibrary = new Library('test');
 
 
+/** Main Flow **/
 
-
-const urlParams = new URLSearchParams(window.location.search);
+const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 
-const house : Library[] = ( isHouse(urlParams) || cachedHouse || [mainLibrary] )
+const house : House = ( recievedURLParams.isHouse() || cachedHouse || [mainLibrary] )
 
-function isHouse(urlArgs : URLSearchParams){
-    const encodedStr = urlArgs.get('house')
-    if(!encodedStr) return false;
-    const decodedStr = decodeURIComponent(encodedStr);
 
-    try {
-        JSON.parse(decodedStr)
-    } catch (err) {
-        if (err){
-            console.log(err);
-            return false;
-        }
-    }
-    const house = JSON.parse(decodedStr);
 
-    for(const room of house){
-        if(typeof room.name !== 'string'        ||
-           room.storage.constructor !== Array   ||
-           room.check !== Library.toString()){
-            return false
-        }
-    }
-
-    return house
-}
 
 // Reintroduce Classes into parsed objects from Cache or URL 
 
@@ -71,9 +91,25 @@ for(const libraries of house){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+/** Setters for house retrieval from url/cache **/
+
 localStorage.setItem('house', JSON.stringify(house)); // cache
 
 const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
+
+
+
+/** Functions **/
 
 
 
