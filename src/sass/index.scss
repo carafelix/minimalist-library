@@ -26,13 +26,16 @@ ground{
     left: center;
     padding: 50px;
     background-color: blanchedalmond;
-    
+    max-width: 300px;
     border-radius: 20px;
 
     form{
         display: flex;
         gap: 0.5rem;
         flex-direction: column;
+        tags{
+            width: 100%;
+        }
     }
 }
 

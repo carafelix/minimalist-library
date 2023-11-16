@@ -6,3 +6,4 @@ tmp
 *.dtmp
 *.bkp
 modules
+build/out.js
