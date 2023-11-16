@@ -2,11 +2,13 @@
   "scripts": {
     "tsc": "tsc -p ./ -w",
     "sass": "sass --watch src/sass:out/css",
-    "watch": "concurrently \"npm run tsc\" \"npm run sass\""
+    "watch": "concurrently \"npm run tsc\" \"npm run sass\"",
+    "build": "esbuild ./src/ts/index.ts --bundle --outfile=build/out.js"
   },
   "dependencies": {
     "@yaireo/tagify": "^4.17.9",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.19.5"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",

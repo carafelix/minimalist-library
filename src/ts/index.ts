@@ -1,4 +1,4 @@
-import Tagify from '@yaireo/tagify'
+import Tagify from './modules/tagify/dist/tagify'
 
 localStorage.clear()
 class Library{
@@ -152,6 +152,9 @@ const addBookBtn = document.getElementById('add-book')
 
             const addBookForm = document.getElementById('new-book-form')
             addBookForm?.addEventListener('mousedown',(ev)=> ev.stopPropagation())
+
+            const select = document.getElementById('genres')
+            if(select) new Tagify(select, {})
 
             ground?.classList.add('opaque')
         })
