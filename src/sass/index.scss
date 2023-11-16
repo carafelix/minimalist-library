@@ -1,12 +1,38 @@
-html {
-    min-height: 100vh;
-    min-width: 100vw;
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main{
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-width: 100vw;
+    
+    @include center;
+    
+}
+ground{
+    min-height: 100vh;
+    min-width: 100vw;
+
+    @include center;
+}
+
+
+#new-book-form{
+
+    position: absolute;
+    top: center;
+    left: center;
+    padding: 50px;
+    background-color: blanchedalmond;
+    
+    border-radius: 20px;
+
+    form{
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;
+    }
 }
 

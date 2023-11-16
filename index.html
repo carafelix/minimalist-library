@@ -7,44 +7,52 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./out/css/normalize.css">
     <link rel="stylesheet" href="./out/css/index.css">
-    <script src="./out/js/index.js" defer></script>
+    <script type="module" src="./out/js/index.js" defer></script>
 </head>
 <body>
     <main>
-        <nav id="sidenav-library-selection"></nav>
+        <div id="ground">
+            <nav id="sidenav-library-selection"></nav>
 
-        <div id="library">
-            <div id="stand" class="mid">
-                <!-- books -->
-            </div>
-            <div class="search">
-                <span class="material-symbols-rounded">search</span>
-                <input type="search" name="book-lookup" id="lookup">
-            </div>
-            <input type="button" value="Add Book" id="add-book">
-            <select name="sort-by" id="sort-by">
-                <option value="sort-by-title">Sort by Title</option>
-                <option value="sort-by-author">Sort by Author </option>
-                <option value="sort-by-read-state">Sort by Read Status</option>
-                <option value="sort-by-pages">Sort by pages</option>
-                <option value="sort-by-genre">Sort by genre</option>
+            <div id="library">
+                <div id="stand" class="mid">
+                    <!-- books -->
+                </div>
+                <div class="search">
+                    <span class="material-symbols-rounded">search</span>
+                    <input type="search" name="book-lookup" id="lookup">
+                </div>
+                <input type="button" value="Add Book" id="add-book">
+                <select name="sort-by" id="sort-by">
+                    <option value="sort-by-title">Sort by Title</option>
+                    <option value="sort-by-author">Sort by Author </option>
+                    <option value="sort-by-read-state">Sort by Read Status</option>
+                    <option value="sort-by-pages">Sort by pages</option>
+                    <option value="sort-by-genre">Sort by genre</option>
 
-            </select>
+                </select>
+            </div>
         </div>
 
+        <template id="new-book-template">
+            <div id="new-book-form">
+                <form autocomplete="off">
+                    <div>Title:<input type="text" name="title" id="title"></div>
+                    <div>Author:<input type="text" name="author" id="author"></div>
+                    <div>Pages:<input type="text" name="pages" id="pages"></div>
+
+                    <div>Genre: <input type="text"> </div>
+
+                    <div>Read:<input type="checkbox" name="read" id="read"></div>
+
+                    <div><hr></div>
+
+                    <div>ISBN:<input type="text" name="isbn" id="isbn"></div>
+
+                    <input type="button" value="submit">
+                </form>
+            </div>
+        </template>
     </main>
-
-    <template>
-        <div id="new-book-form">
-            <input type="text" name="title" id="title">
-            <input type="text" name="author" id="author">
-            <input type="text" name="read" id="read">
-            <input type="text" name="pages" id="pages">
-            <input type="text" name="genre" id="genre">
-            <input type="text" name="date" id="date">
-            <input type="text" name="isbn" id="isbn">
-        </div>
-    </template>
-    
 </body>
 </html>

@@ -5,9 +5,11 @@
     "watch": "concurrently \"npm run tsc\" \"npm run sass\""
   },
   "dependencies": {
+    "@yaireo/tagify": "^4.17.9",
     "concurrently": "^8.2.2"
   },
   "devDependencies": {
-    "@types/node": "^20.9.0"
+    "@types/node": "^20.9.0",
+    "@types/yaireo__tagify": "^4.17.5"
   }
 }

@@ -1,3 +1,5 @@
+import Tagify from '@yaireo/tagify'
+
 localStorage.clear()
 class Library{
     public storage : Book[]
@@ -54,13 +56,13 @@ class House extends Array<Library>{
 class Book{
     public id;
     constructor(
-        private title :string , 
-        private author : string, 
-        private read : boolean, 
-        private pages? : number, 
-        private genre? : string[] , 
-        private readDate? : Date, 
-        private isbn?: string ){
+        public title :string , 
+        public author : string, 
+        public read : boolean, 
+        public pages? : number, 
+        public genre? : string[] , 
+        public img? : URL, 
+        public isbn?: string ){
             this.id = this.setId()
         }
 
@@ -70,31 +72,19 @@ class Book{
                     return `${reduce_Uint8 + (new Date).getTime()}`
     }
 
-    getTitle(){
-        return this.title
+    getMainGenre = () => {
+        if(this.genre?.[0]){
+            return this.genre[0]
+        }
     }
-    getAuthor(){
-        return this.author
-    }
-    getRead(){
-        return this.read
-    }
-    getPages(){
-        return this.pages
-    }
-    getGenre(){
-        return this.genre
-    }
-    getReadDate(){
-        return this.readDate
-    }
-    getIsbn(){
-        return this.isbn
+
+    getThisBookIfMatches = (inputID:string) =>{
+        if(inputID === this.id) return this;
     }
 }
 
 class URLHouseParams extends URLSearchParams{
-    isHouse = () =>{    // check every function inside every librarie and book to match the prototype
+    isHouse = () =>{    // TO-DO check every function inside every librarie and book to match the prototype
         const encodedStr = this.get('house')
         if(!encodedStr) return false;
         const decodedStr = decodeURIComponent(encodedStr);
@@ -133,16 +123,6 @@ const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 
 const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
 
-const test : House = ( recievedURLParams.isHouse() || cachedHouse || new House() )
-
-test.addLibrary(mainLibrary)
-test.addLibrary(testLibrary)
-test.addLibrary(xxxLibrary)
-
-const harry = new Book('harry el potter','la señora', true)
-
-
-
 
 // Reintroduce Classes into parsed objects from Cache or URL 
 
@@ -153,6 +133,37 @@ for(const libraries of house){
         Object.setPrototypeOf(book, Book.prototype)
     }
 }
+
+// DOM declarations
+const main = document.querySelector('main');
+        main?.addEventListener('mousedown', () => { 
+            const newBookForm = document.getElementById('new-book-form')
+            if(newBookForm) main.removeChild(newBookForm);
+        })
+
+const addBookTemplate = document.getElementById('new-book-template') as HTMLTemplateElement
+
+const ground = document.getElementById('ground');
+    
+const addBookBtn = document.getElementById('add-book')
+        addBookBtn?.addEventListener('click',(ev) => {
+            ev.stopPropagation()
+            main?.appendChild(addBookTemplate.content.cloneNode(true))
+
+            const addBookForm = document.getElementById('new-book-form')
+            addBookForm?.addEventListener('mousedown',(ev)=> ev.stopPropagation())
+
+            ground?.classList.add('opaque')
+        })
+
+
+
+
+
+
+
+const harry = new Book('harry el potter','la señora', true, undefined , undefined , new URL('https://www.codewars.com'));
+
 
 
 
@@ -167,6 +178,17 @@ async function digestPassword(password:string) { // https://developer.mozilla.or
                             .join("");                                      // convert bytes to hex string
   return hashHex;
 }
+
+
+// *** test's ***
+
+const test : House = ( recievedURLParams.isHouse() || cachedHouse || new House() )
+
+test.addLibrary(mainLibrary)
+test.addLibrary(testLibrary)
+test.addLibrary(xxxLibrary)
+
+// *** END ***
 
 
 
@@ -188,9 +210,6 @@ const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 
 
 /** Functions **/
-
-
-
 
 
 
