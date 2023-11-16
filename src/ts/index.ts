@@ -57,20 +57,23 @@ class House extends Array<Library>{
 class Book{
     public id;
     public value;
+    public title;
     constructor(
-        public title :string , 
+        public name : string , 
         public author : string, 
         public read : boolean, 
         public pages? : number, 
         public genre? : string[] , 
         public img? : URL, 
-        public isbn?: string ){
+        public isbn? : isbn,
+        public description? : string ){
+            this.title = this.name + '\n— by —\n' + this.author;
             this.id = this.setId()
-            this.value = this.title
+            this.value = (this.name.length>40) ? this.name.slice(0,40) + '...' : this.name  
         }
 
     private setId = () => {
-                    const str = this.title + this.author + this.read;                           
+                    const str = this.name + this.author;                           
                     const reduce_Uint8 = (new TextEncoder()).encode(str).reduce((a,b)=>a+b)
                     return `${reduce_Uint8 + (new Date).getTime()}`
     }
@@ -84,6 +87,10 @@ class Book{
     getThisBookIfMatches = (inputID:string) =>{
         if(inputID === this.id) return this;
     }
+}
+interface isbn{
+    type: string,
+    identifier: string
 }
 
 class URLHouseParams extends URLSearchParams{
@@ -189,6 +196,8 @@ const addBookBtn = document.getElementById('add-book')
                                                 return books.map((b:any)=>b.volumeInfo)
                                              })
                                              .then((volumes:[])=>{
+                                                console.log(volumes);
+                                                
                                                 return volumes.map((v:any)=>{
                                                     return new Book(
                                                         v.title,
@@ -196,7 +205,9 @@ const addBookBtn = document.getElementById('add-book')
                                                         false,
                                                         v.pageCount,
                                                         v.categories,
-                                                        (v.imageLinks?.thumbnail) ? v.imageLinks.thumbnail : 'assets/placeholder.png'
+                                                        (v.imageLinks?.thumbnail) ? v.imageLinks.thumbnail : 'assets/placeholder.png',
+                                                        (v.industryIdentifiers?.[0]) ? v.industryIdentifiers[0] : undefined,
+                                                        v.description
                                                         )
                                                 })
                                              }).then((reformated)=>{
@@ -293,7 +304,7 @@ const tagifyDropdown = {
     enabled         : 2,              // show the dropdown immediately on focus
     maxItems        : 5,
     closeOnSelect   : true,          // keep the dropdown open after selecting a suggestion
-    searchKeys      : ["title", "author"]
+    searchKeys      : ["value", "author"]
 }
 
 
