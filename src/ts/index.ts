@@ -1,4 +1,4 @@
-import Tagify from './modules/tagify/dist/tagify'
+import Tagify from 'tagify'
 
 class vet extends Tagify{
     

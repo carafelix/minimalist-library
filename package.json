@@ -13,6 +13,5 @@
   "devDependencies": {
     "@types/node": "^20.9.0",
     "@types/yaireo__tagify": "^4.17.5"
-  },
-  "types": "index.d.ts"
+  }
 }
