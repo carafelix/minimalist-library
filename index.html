@@ -38,13 +38,13 @@
 
         <template id="new-book-template">
             <div id="new-book-form">
-                <form autocomplete="off">
+                <form autocomplete="off" onsubmit="myFunc">
                     <div>Book Title:<input type="text" name="title" id="title" placeholder="Search by title or author"></div>
                     <div>Read:<input type="checkbox" name="read" id="read"></div>
                     <div><hr></div>
                     <div>ISBN:<input type="text" name="isbn" id="isbn"></div>
 
-                    <input type="button" value="submit">
+                    <input type="button" value="submit" id="submit">
                 </form>
             </div>
         </template>

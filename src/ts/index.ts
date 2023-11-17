@@ -1,5 +1,8 @@
 import Tagify from './modules/tagify/dist/tagify'
 
+class vet extends Tagify{
+    
+}
 
 localStorage.clear()
 class Library{
@@ -166,11 +169,8 @@ const addBookBtn = document.getElementById('add-book')
             const addBookForm = document.getElementById('new-book-form')
             addBookForm?.addEventListener('mousedown',(ev)=> ev.stopPropagation())
 
-            const select = document.getElementById('genres') as HTMLInputElement
-            if(select) new Tagify(select, {
-                whitelist: bookGenres,
-                dropdown : tagifyDropdown
-            })
+            const submit = document.getElementById('submit')
+                    submit?.addEventListener('click',(e)=>console.log(e))            
 
 
             const title = document.getElementById('title') as HTMLInputElement
@@ -196,8 +196,6 @@ const addBookBtn = document.getElementById('add-book')
                                                 return books.map((b:any)=>b.volumeInfo)
                                              })
                                              .then((volumes:[])=>{
-                                                console.log(volumes);
-                                                
                                                 return volumes.map((v:any)=>{
                                                     return new Book(
                                                         v.title,
@@ -216,9 +214,8 @@ const addBookBtn = document.getElementById('add-book')
                                              }).then((v)=>{
                                                 titleSelect.loading(false).dropdown.show(v)
                                              })
-                                             
-                                             
                             }
+
 
                         }
                     }
@@ -249,9 +246,6 @@ test.addLibrary(testLibrary)
 test.addLibrary(xxxLibrary)
 
 // *** END ***
-
-
-
 
 
 
