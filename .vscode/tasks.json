@@ -16,6 +16,17 @@
                 "revealProblems": "onProblem",
                 "close": true
             }
-        } // adding configs here should make ctrl+shift+b show more build options. It detects npm scripts
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "label": "npm: build",
+            "detail": "esbuild ./src/ts/index.ts --bundle --outfile=build/out.js"
+        }
     ]
 }

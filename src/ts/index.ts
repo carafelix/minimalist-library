@@ -1,9 +1,5 @@
 import Tagify from 'tagify'
 
-class vet extends Tagify{
-    
-}
-
 localStorage.clear()
 class Library{
     public storage : Book[]
@@ -151,9 +147,9 @@ for(const libraries of house){
 const body = document.querySelector('body')
 const main = document.querySelector('main');
         main?.addEventListener('mousedown', () => { 
-            const newBookForm = document.getElementById('new-book-form')
+            const newBookDiv = document.getElementById('new-book-div')
             const tagifyDropdown = document.querySelector('.tagify__dropdown')
-            if(newBookForm) main.removeChild(newBookForm);
+            if(newBookDiv) main.removeChild(newBookDiv);
             if(tagifyDropdown) body?.removeChild(tagifyDropdown);
         })
 
@@ -165,63 +161,56 @@ const addBookBtn = document.getElementById('add-book')
         addBookBtn?.addEventListener('click',(ev) => {
             ev.stopPropagation()
             main?.appendChild(addBookTemplate.content.cloneNode(true))
+            const addBookDiv = document.getElementById('new-book-div');
+                    addBookDiv?.addEventListener('mousedown', (ev) => ev.stopPropagation());
 
-            const addBookForm = document.getElementById('new-book-form')
-            addBookForm?.addEventListener('mousedown',(ev)=> ev.stopPropagation())
+            const addBookForm = document.getElementById('new-book-form');
+            const title = document.getElementById('title') as HTMLInputElement;
+            if(!title)return;
 
-            const submit = document.getElementById('submit')
-                    submit?.addEventListener('click',(e)=>console.log(e))            
+            const titleSelect = new Tagify(title,{ // todo - add method to tagify, resolve all any:
+                enforceWhitelist: true,
+                mode: "select",
+                whitelist: [""],
+                dropdown : tagifyDropdown,
+                callbacks: {
+                    "input": (e:any) => {
+                        if(e.detail.value.length > 1){
+                            titleSelect.loading(true).dropdown.hide()
 
-
-            const title = document.getElementById('title') as HTMLInputElement
-            let titleSelect:any;  // idk why i couldn't import types and 
-            if(title){
-                titleSelect = new Tagify(title,{
-                    enforceWhitelist: true,
-                    mode: "select",
-                    whitelist: [""],
-                    dropdown : tagifyDropdown,
-
-                    callbacks: {
-                        "input": (e:any) => {
-                            if(e.detail.value.length > 1){
-
-                                titleSelect.loading(true).dropdown.hide()
-
-                                const searchResults = googleGET(e.detail.value)
+                            const searchResults = googleGET(e.detail.value)
                                 searchResults.then((r)=>r.json())
-                                             .then((data)=>data)
-                                             .then((o)=>o.items)
+                                             .then((data:googleResponse)=>data.items as googleVolume[])
                                              .then((books)=>{
-                                                return books.map((b:any)=>b.volumeInfo)
+                                                return books.map((b:googleVolume)=>b.volumeInfo) as VolumeInfo[]
                                              })
-                                             .then((volumes:[])=>{
-                                                return volumes.map((v:any)=>{
+                                             .then((volumes)=>{
+                                                return volumes.map((v:VolumeInfo)=>{
                                                     return new Book(
                                                         v.title,
                                                         (v.authors) ? v.authors.join(', ') : 'unknown',
                                                         false,
                                                         v.pageCount,
                                                         v.categories,
-                                                        (v.imageLinks?.thumbnail) ? v.imageLinks.thumbnail : 'assets/placeholder.png',
+                                                        (v.imageLinks?.thumbnail) ? new URL(v.imageLinks.thumbnail) : new URL('/assets/placeholder.png'),
                                                         (v.industryIdentifiers?.[0]) ? v.industryIdentifiers[0] : undefined,
                                                         v.description
                                                         )
                                                 })
                                              }).then((reformated)=>{
                                                 titleSelect.whitelist = reformated
+                                                titleSelect.loading(false).dropdown.show() 
 
-                                             }).then((v)=>{
-                                                titleSelect.loading(false).dropdown.show(v)
                                              })
-                            }
-
-
                         }
                     }
-                    
+                }
+            })
+
+            addBookForm?.addEventListener('submit',(ev)=>{
+                ev.preventDefault();
+                console.log(titleSelect.value);
                 })
-            }
         })
 
 
@@ -231,8 +220,6 @@ const addBookBtn = document.getElementById('add-book')
 
 
 const harry = new Book('harry el potter','la señora', true, undefined , undefined , new URL('https://www.codewars.com'));
-
-
 
 
 
@@ -278,7 +265,7 @@ async function googleGET(input:string){
     //     method: 'GET'
     // })
 
-    const general_search = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${input}&key=${googleApiKey}&langRestrict=en`,{
+    const general_search = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${input}&key=${googleApiKey}&langRestrict=en&maxResults=40`,{
         method: 'GET'
     })
 
@@ -312,7 +299,7 @@ async function digestPassword(password:string) { // https://developer.mozilla.or
     const hashBuffer = await crypto.subtle.digest("SHA-256", msgUint8);       // hash the message
     const hashArray = Array.from(new Uint8Array(hashBuffer));                 // convert buffer to byte array
     const hashHex = hashArray
-                              .map((b) => b.toString(16).padStart(2, "0"))
+                              .map((b) => b.toString(16))//.padStart(2, "0"))
                               .join("");                                      // convert bytes to hex string
     return hashHex;
   }

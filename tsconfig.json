@@ -32,8 +32,8 @@
       "tagify": ["node_modules/@yaireo/tagify/dist/tagify"]
       },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
-    // "typeRoots": ["ts/modules/yaireo__tagify/"],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
-    // "types": ["tagify"],                                      /* Specify type package names to be included without being referenced in a source file. */
+    // "typeRoots": ["src/ts/"],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
+    // "types": ["index.d.ts"],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
     // "resolveJsonModule": true,                        /* Enable importing .json files */
     // "noResolve": true,                                /* Disallow `import`s, `require`s or `<reference>`s from expanding the number of files TypeScript should add to a project. */

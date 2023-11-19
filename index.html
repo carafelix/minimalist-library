@@ -37,14 +37,14 @@
         </div>
 
         <template id="new-book-template">
-            <div id="new-book-form">
-                <form autocomplete="off" onsubmit="myFunc">
+            <div id="new-book-div">
+                <form autocomplete="off" id="new-book-form">
                     <div>Book Title:<input type="text" name="title" id="title" placeholder="Search by title or author"></div>
                     <div>Read:<input type="checkbox" name="read" id="read"></div>
                     <div><hr></div>
                     <div>ISBN:<input type="text" name="isbn" id="isbn"></div>
 
-                    <input type="button" value="submit" id="submit">
+                    <input type="submit" value="submit-add-book" id="submit-add-book">
                 </form>
             </div>
         </template>
