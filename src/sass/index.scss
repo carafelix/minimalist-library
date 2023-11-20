@@ -5,12 +5,17 @@
     font-size: 20px;
     box-sizing: border-box;
     vertical-align: text-top;
+ 
 }
 
 @mixin center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body{
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1); 
 }
 
 main{
@@ -50,6 +55,8 @@ ground{
             height: 0.8rem;
             width: 0.8rem;
         }
+
+
     }
 }
 
@@ -63,4 +70,13 @@ ground{
         padding: 0.2rem;
     }
 }
+.opaque{
+    background: rgba(0, 0, 0, 0.725), 
+ }
 
+.hide{
+    opacity: 0;
+}
+div#ground{
+    transition: all 1s ease;
+}

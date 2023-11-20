@@ -214,21 +214,26 @@ for(const libraries of house){
 
 // DOM declarations
 const body = document.querySelector('body')
+const ground = document.getElementById('ground');
 const main = document.querySelector('main');
         main?.addEventListener('mousedown', () => { 
             const newBookDiv = document.getElementById('new-book-div')
             const tagifyDropdown = document.querySelector('.tagify__dropdown')
             if(newBookDiv) main.removeChild(newBookDiv);
             if(tagifyDropdown) body?.removeChild(tagifyDropdown);
+            body?.classList.remove('opaque')
+            ground?.classList.remove('hide')
         })
 
 const addBookTemplate = document.getElementById('new-book-template') as HTMLTemplateElement
-
-const ground = document.getElementById('ground');
+    
     
 const addBookBtn = document.getElementById('add-book')
         addBookBtn?.addEventListener('click',(ev) => {
             ev.stopPropagation()
+            body?.classList.add('opaque')
+            ground?.classList.add('hide')
+
             main?.appendChild(addBookTemplate.content.cloneNode(true))
             const addBookDiv = document.getElementById('new-book-div');
                     addBookDiv?.addEventListener('mousedown', (ev) => ev.stopPropagation());
@@ -279,8 +284,14 @@ const addBookBtn = document.getElementById('add-book')
             addBookForm?.addEventListener('submit',(ev)=>{
                 ev.preventDefault();
                 const selectedBook : Book = titleSelect.value[0].googleVolumeInfoToBook()
-                    console.log(selectedBook);  
-                    
+                const checkbox = document.querySelector('input[type="checkbox"]') as HTMLInputElement
+                    selectedBook.read = checkbox.checked;
+
+                // Should point to the active library, and not to mainLibrary. like check in which state is the nav and do that
+
+                
+
+
                 })
         })
 
