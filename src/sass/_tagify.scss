@@ -4,7 +4,7 @@
 :root {
     --tagify-dd-color-primary: rgb(53,149,246); // should be same as "$tags-focus-border-color"
     --tagify-dd-bg-color: white;
-    --tagify-dd-item-pad: .3em .5em; // should be same as $tag-pad (below)
+    --tagify-dd-item-pad: .5em .5em; // should be same as $tag-pad (below)
 }
 
 .tagify{
@@ -684,7 +684,7 @@
             border-radius: 2px;
             position: relative;
             outline: none;
-            max-height: 60px;
+            max-height: 120px;
             max-width: 100%;
 
             &--active{

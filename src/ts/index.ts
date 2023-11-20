@@ -55,24 +55,21 @@ class House extends Array<Library>{
 
 class Book{
     public id;
-    public value;
-    public title;
     constructor(
-        public name : string , 
+        public title : string , 
         public author : string, 
         public read : boolean, 
+        public img : URL, 
         public pages? : number, 
         public genre? : string[] , 
-        public img? : URL, 
         public isbn? : isbn,
         public description? : string ){
-            this.title = this.name + '\n— by —\n' + this.author;
             this.id = this.setId()
-            this.value = (this.name.length>40) ? this.name.slice(0,40) + '...' : this.name  
+            if(this.img.protocol === 'http:') this.img.protocol = 'https:';
         }
 
     private setId = () => {
-                    const str = this.name + this.author;                           
+                    const str = this.title + this.author;                           
                     const reduce_Uint8 = (new TextEncoder()).encode(str).reduce((a,b)=>a+b)
                     return `${reduce_Uint8 + (new Date).getTime()}`
     }
@@ -86,7 +83,79 @@ class Book{
     getThisBookIfMatches = (inputID:string) =>{
         if(inputID === this.id) return this;
     }
+
+    setAddScreenValues = () => {
+        const div = document.getElementById('book-info');
+        if(!div) return;
+        div.innerText = 
+                        `\nPages: ${this.pages}${(this.genre)? `\nGenres: ${this.genre?.join(' ')}` : '' }${(this.description)? `\nDescription:\n${this.briefDescription()}` : '' }`
+
+        let imgEl = document.getElementById('book-img');
+
+        if(!imgEl){
+            imgEl = new Image();
+            imgEl.setAttribute('alt','book-cover');
+            imgEl.setAttribute('src',this.img.href)
+            div.insertBefore(imgEl,div.firstChild)
+            
+        } else {
+            imgEl.setAttribute('src',this.img.href)
+        }
+
+    }
+    private briefDescription = ()=> {
+        if(this.description) return this.description.split(' ').slice(0,25).join(' ') + '...';
+    }
 }
+
+class selectTagify extends Tagify{
+
+    // const googleApiKey = 'AIzaSyBbLoGrfBpVZrXlPHSeFkLniUZzG0o8NI8'
+    private googleApiKey = 'AIzaSyBLwUmLLP_bdYf4hEY5umKkIf_WgdkOkzQ'
+    
+    googleGET = async (input:string) => {
+
+        const general_search = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${input}&key=${this.googleApiKey}&langRestrict=en&maxResults=40`,{
+            method: 'GET'
+        })
+    
+        return general_search
+    }
+    static tagifyDropdownSettings = {
+        classname       : "color-blue",
+        enforceWhitelist: true,
+        enabled         : 2,              // show the dropdown immediately on focus
+        maxItems        : 40,
+        closeOnSelect   : true,          // keep the dropdown open after selecting a suggestion
+        searchKeys      : ["value", "author"]
+    }
+}
+
+class dropdownBooks{
+    constructor(
+        public title : string,
+        public value : string,
+        public volume : VolumeInfo
+    ){}
+
+    googleVolumeInfoToBook = () => {
+        return new Book(
+            this.volume.title,
+            (this.volume.authors) ? this.volume.authors.join(', ') : 'unknown',
+            false,
+            (this.volume.imageLinks?.thumbnail) ? new URL(this.volume.imageLinks.thumbnail) : new URL('https://raw.githubusercontent.com/carafelix/minimalist-library/main/assets/placeholder.png'),
+            this.volume.pageCount,
+            this.volume.categories,
+            (this.volume.industryIdentifiers?.[0]) ? this.volume.industryIdentifiers[0] : undefined,
+            this.volume.description
+        )
+    }
+
+}
+
+
+
+
 interface isbn{
     type: string,
     identifier: string
@@ -168,48 +237,50 @@ const addBookBtn = document.getElementById('add-book')
             const title = document.getElementById('title') as HTMLInputElement;
             if(!title)return;
 
-            const titleSelect = new Tagify(title,{ // todo - add method to tagify, resolve all any:
+            const titleSelect = new selectTagify(title,{ // todo - add method to tagify, resolve all any:
                 enforceWhitelist: true,
                 mode: "select",
                 whitelist: [""],
-                dropdown : tagifyDropdown,
+                dropdown : selectTagify.tagifyDropdownSettings,
                 callbacks: {
-                    "input": (e:any) => {
+                    "input": (e:CustomEvent<Tagify.Tagify.TagData>) => {
                         if(e.detail.value.length > 1){
                             titleSelect.loading(true).dropdown.hide()
 
-                            const searchResults = googleGET(e.detail.value)
-                                searchResults.then((r)=>r.json())
-                                             .then((data:googleResponse)=>data.items as googleVolume[])
-                                             .then((books)=>{
-                                                return books.map((b:googleVolume)=>b.volumeInfo) as VolumeInfo[]
-                                             })
-                                             .then((volumes)=>{
-                                                return volumes.map((v:VolumeInfo)=>{
-                                                    return new Book(
-                                                        v.title,
-                                                        (v.authors) ? v.authors.join(', ') : 'unknown',
-                                                        false,
-                                                        v.pageCount,
-                                                        v.categories,
-                                                        (v.imageLinks?.thumbnail) ? new URL(v.imageLinks.thumbnail) : new URL('/assets/placeholder.png'),
-                                                        (v.industryIdentifiers?.[0]) ? v.industryIdentifiers[0] : undefined,
-                                                        v.description
-                                                        )
+                            titleSelect.googleGET(e.detail.value)
+                                             .then((r)=>r.json())
+                                             .then((data:googleResponse)=>{
+                                                const volumes : googleVolume [] = data.items 
+                                                const g_volumeInfo : VolumeInfo[] = volumes.map((b:googleVolume)=>b.volumeInfo)
+                                                return g_volumeInfo.map((volume)=>{
+                                                    return new dropdownBooks(
+                                                        (volume?.description) ? volume.description : '' ,
+                                                        ((volume.title.length>=80) ? volume.title.slice(0,80) + '...' : volume.title)       +
+                                                                                                                            ' —by—\n'       +
+                                                                                ((volume?.authors) ? volume.authors[0] : 'unknown') ,
+                                                        volume
+                                                    )
                                                 })
-                                             }).then((reformated)=>{
+                                             }).then((reformated : dropdownBooks[])=>{
+                                                
                                                 titleSelect.whitelist = reformated
                                                 titleSelect.loading(false).dropdown.show() 
-
                                              })
                         }
+                    },
+                    "change": () => {
+                        if(!titleSelect.value[0]) return;
+                        titleSelect.value[0].googleVolumeInfoToBook().setAddScreenValues()
                     }
+                    
                 }
             })
 
             addBookForm?.addEventListener('submit',(ev)=>{
                 ev.preventDefault();
-                console.log(titleSelect.value);
+                const selectedBook : Book = titleSelect.value[0].googleVolumeInfoToBook()
+                    console.log(selectedBook);  
+                    
                 })
         })
 
@@ -217,9 +288,8 @@ const addBookBtn = document.getElementById('add-book')
 
 
 
+       
 
-
-const harry = new Book('harry el potter','la señora', true, undefined , undefined , new URL('https://www.codewars.com'));
 
 
 
@@ -237,7 +307,14 @@ test.addLibrary(xxxLibrary)
 
 
 
-
+const tagifyDropdownSettings = {
+    classname       : "color-blue",
+    enforceWhitelist: true,
+    enabled         : 2,              // show the dropdown immediately on focus
+    maxItems        : 40,
+    closeOnSelect   : true,          // keep the dropdown open after selecting a suggestion
+    searchKeys      : ["value", "author"]
+}
 
 
 
@@ -252,41 +329,23 @@ const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 
 /** Functions **/
 
+
+
+
 // google api calls
 
-const googleApiKey = 'AIzaSyBbLoGrfBpVZrXlPHSeFkLniUZzG0o8NI8'
+
 const test_isbn = '9789568268992'
 const inputText = 'Lezama+Lima+Paradiso'
 
 
-async function googleGET(input:string){
 
-    // const test_via_isbn = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${test_isbn}&key=${googleApiKey}`,{
-    //     method: 'GET'
-    // })
-
-    const general_search = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${input}&key=${googleApiKey}&langRestrict=en&maxResults=40`,{
-        method: 'GET'
-    })
-
-    return general_search
-
-}
 
 
 
 
 // tagify options
 
-
-const tagifyDropdown = {
-    classname       : "color-blue",
-    enforceWhitelist: true,
-    enabled         : 2,              // show the dropdown immediately on focus
-    maxItems        : 5,
-    closeOnSelect   : true,          // keep the dropdown open after selecting a suggestion
-    searchKeys      : ["value", "author"]
-}
 
 
 
