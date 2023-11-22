@@ -54,10 +54,6 @@ describe('House Object testing',()=>{
 
             house.sortHouseBySelectedLibrary(c!)
             assert.equal(house[0] , c)
-
-            console.log(house);
-            
-            
         })
     })
 })

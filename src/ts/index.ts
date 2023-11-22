@@ -53,10 +53,12 @@ class House extends Array<Library>{
             if(l === 'foo') l = 'notFoo';
         }
         while(this.includesDuplicates(l))
+        
         if(!l) return;
 
         const newBornLibrary = new Library(l)
         this.push(newBornLibrary);
+        
         return newBornLibrary
     } 
 
@@ -68,7 +70,7 @@ class House extends Array<Library>{
 
         anchor.setAttribute('href', `#${l.nameToId()}`);
         anchor.setAttribute('id', `${l.nameToId()}-library`)
-        anchor.innerText = `${l.name}`
+        anchor.innerText = `${l.name} Library`
 
         anchor.addEventListener('click',() => {
             this.sortHouseBySelectedLibrary(l)
@@ -256,7 +258,7 @@ class URLHouseParams extends URLSearchParams{
 
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
-const mainLibrary = new Library('Main Library')
+const mainLibrary = new Library('Main')
 export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
 
 
@@ -276,14 +278,15 @@ const ground = document.querySelectorAll('.hidable')
 const nav = document.querySelector('nav');
 
 
-// repopulate old libraries into nav
+// re-populate old libraries into nav
 
     house.forEach((l)=>house.setDOMlibrary(l))
 
-
 const addLibraryBtn = document.getElementById('new-library-btn');
         addLibraryBtn?.addEventListener('click',()=>{
-
+            const newBorn = house.createLibrary();
+            if (!newBorn) return;
+            house.setDOMlibrary(newBorn);
         })
 
 const main = document.querySelector('main');
