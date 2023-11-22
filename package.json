@@ -3,7 +3,8 @@
     "tsc": "tsc -p ./ -w",
     "sass": "sass --watch src/sass:out/css",
     "watch": "concurrently \"npm run tsc\" \"npm run sass\"",
-    "build": "esbuild ./src/ts/index.ts --bundle --outfile=build/out.js"
+    "build": "esbuild ./src/ts/index.ts --bundle --outfile=build/out.js",
+    "testbuild": "esbuild ./test/mocha/test.ts --bundle --outfile=test/mocha/tests.spec.js"
   },
   "dependencies": {
     "@yaireo/tagify": "^4.17.9",

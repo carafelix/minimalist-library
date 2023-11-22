@@ -55,7 +55,9 @@ class House extends Array<Library>{
         while(this.includesDuplicates(l))
         if(!l) return;
 
-        this.push(new Library(l));
+        const newBornLibrary = new Library(l)
+        this.push(newBornLibrary);
+        return newBornLibrary
     } 
 
     setDOMlibrary (l:Library) {
@@ -255,7 +257,7 @@ class URLHouseParams extends URLSearchParams{
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 const mainLibrary = new Library('Main Library')
-const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
+export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
 
 
 // Reintroduce Classes into parsed objects from Cache or URL 
