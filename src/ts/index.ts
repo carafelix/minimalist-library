@@ -5,8 +5,6 @@ class Library{
     public storage : Book[]
     constructor(
         public name : string,
-        private password? : string
-
     ){
         this.storage = []
     }
@@ -14,9 +12,15 @@ class Library{
     addBook = (b:Book) => {
         this.storage.push(b);
     }
+
     deleteBook = (b:Book) => {
         const index = this.storage.indexOf(b)
         this.storage.splice(index,1);
+    }
+
+
+    nameToId = () => {
+        return this.name.replace(/\s/g, '-').toLowerCase()
     }
 
     getBookFromID = () => {
@@ -39,9 +43,8 @@ class Library{
 
 class House extends Array<Library>{
     
-    addLibrary = (l:Library) => {
-        this.push(l);
-    }
+    public password? : string
+    
     removeLibrary(l:Library){
         const index = this.indexOf(l);
         this.splice(index,1);
@@ -51,9 +54,55 @@ class House extends Array<Library>{
         localStorage.clear()
         window.location.reload();
     }
+    
+    createLibrary (){
+        if(house.length>=5){
+            alert('Max Libraries amount reached')
+            return
+        }
+        let l;
+        do {
+            l = prompt('Input new library name');
+            if(l === 'foo') l = 'notFoo';
+        }
+        while(this.includesDuplicates(l))
+        if(!l) return;
+
+        this.push(new Library(l));
+    } 
+
+    setDOMlibrary = (l:Library) => {
+        const anchorTemplate = document.getElementById('lib-template') as HTMLTemplateElement;
+              nav?.appendChild(anchorTemplate.content.cloneNode(true));
+
+        const anchor = document.getElementById('foo-library') as HTMLAnchorElement;
+
+        anchor.setAttribute('href', `#${l.nameToId()}`);
+        anchor.setAttribute('id', `${l.nameToId()}-library`)
+        anchor.innerText = `${l.name}`
+    }
+    unsetDOMlibrary(l:Library){
+        const domL = document.getElementById(l.nameToId());
+        if(!domL) return 'not okay';
+        
+        nav?.removeChild(domL)
+    }
+
+    includesDuplicates(inputName:string | null){
+        if(!inputName) return false;
+
+       for(const l of this){
+        if(l.name == inputName){
+            return true
+        }
+       }
+        return false
+    }
+
     renameLibrary = () => {
 
     }
+
     getIndexOfLibrary = () => {
 
     }
@@ -71,7 +120,7 @@ class Book{
         public img : URL, 
         public pages? : number, 
         public genre? : string[] , 
-        public isbn? : isbn,
+        public isbn? : IndustryIdentifier,
         public description? : string ){
             this.id = this.setId()
             if(this.img.protocol === 'http:') this.img.protocol = 'https:';
@@ -165,10 +214,7 @@ class dropdownBooks{
 
 
 
-interface isbn{
-    type: string,
-    identifier: string
-}
+
 
 class URLHouseParams extends URLSearchParams{
     isHouse = () =>{    // TO-DO check every function inside every librarie and book to match the prototype
@@ -197,9 +243,7 @@ class URLHouseParams extends URLSearchParams{
     }
 }
 
-const mainLibrary = new Library('main'),
-      testLibrary = new Library('test'),
-      xxxLibrary  = new Library('xxx');
+
 
 
 
@@ -207,7 +251,7 @@ const mainLibrary = new Library('main'),
 
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
-
+const mainLibrary = new Library('Main Library')
 const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
 
 
@@ -221,9 +265,23 @@ for(const libraries of house){
     }
 }
 
-// DOM declarations
+// DOM declarations and manipulaiton
 const body = document.querySelector('body')
 const ground = document.querySelectorAll('.hidable')
+
+const nav = document.querySelector('nav');
+
+
+// repopulate old libraries into nav
+
+    house.forEach((l)=>house.setDOMlibrary(l))
+
+
+const addLibraryBtn = document.getElementById('new-library-btn');
+        addLibraryBtn?.addEventListener('click',()=>{
+
+        })
+
 const main = document.querySelector('main');
         main?.addEventListener('mousedown', () => { 
             const newBookDiv = document.getElementById('new-book-div')
@@ -296,6 +354,8 @@ const addBookBtn = document.getElementById('add-book')
                 const checkbox = document.querySelector('input[type="checkbox"]') as HTMLInputElement
                     selectedBook.read = checkbox.checked;
 
+                house[0].addBook(selectedBook)
+
                 // point always to house[0] and sort the library[] when clicking any library matching that name an put it on [0]
 
                 
@@ -303,30 +363,6 @@ const addBookBtn = document.getElementById('add-book')
 
                 })
         })
-
-
-
-
-
-       
-
-
-
-
-
-// *** test's ***
-
-const test : House = ( recievedURLParams.isHouse() || cachedHouse || new House() )
-
-test.addLibrary(mainLibrary)
-test.addLibrary(testLibrary)
-test.addLibrary(xxxLibrary)
-
-// *** END ***
-
-
-
-
 
 
 const tagifyDropdownSettings = {

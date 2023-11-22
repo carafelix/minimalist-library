@@ -20,3 +20,8 @@ Proyect assignment from [The Odin Proyect](https://www.theodinproject.com/lesson
 ## License
 
 Licensed under [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/)
+
+## todo
+- integrate bit.ly for long url
+- integrate imgur for img hosting
+- add ability to log custom books

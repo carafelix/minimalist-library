@@ -11,7 +11,7 @@
 <body>
     <main>
         <nav id="sidenav-library-selection" class="hidable">
-            <a href="#main">Main Library</a>
+            <input type="button" id="new-library-btn" value="create library">
         </nav>
         <div id="ground" class="hidable">
 
@@ -47,6 +47,11 @@
                 </form>
             </div>
         </template>
+
+        <template id="lib-template">
+            <a href="#foo" id="foo-library" class="libraries">Foo Library</a>
+        </template>
+        
     </main>
 </body>
 </html>
