@@ -1,4 +1,4 @@
-import Tagify from 'tagify'
+import Tagify from 'tagify';
 
 localStorage.clear()
 class Library{
@@ -323,6 +323,10 @@ test.addLibrary(testLibrary)
 test.addLibrary(xxxLibrary)
 
 // *** END ***
+
+console.log('vetis');
+console.log('ana');
+
 
 
 

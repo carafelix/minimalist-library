@@ -10,10 +10,11 @@
             "name": "Chrome",
             "request": "launch",
             "type": "chrome",
-            "url": "http://localhost:8080",
+            "url": "http://localhost:5050",
             "webRoot": "${workspaceFolder}",
             "file": "${workspaceFolder}/index.html",
             "preLaunchTask": "npm: build",
+            "port": 5050
 
         },
 
