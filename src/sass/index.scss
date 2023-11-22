@@ -21,15 +21,16 @@ body{
 main{
     min-height: 100vh;
     min-width: 100vw;
-    
-    @include center;
-    
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
 }
-ground{
-    min-height: 100vh;
-    min-width: 100vw;
-
-    @include center;
+nav{
+    grid-column-start: 1;
+    text-align: end
+}
+#ground{
+    @include center()
 }
 
 

@@ -51,6 +51,15 @@ class House extends Array<Library>{
         localStorage.clear()
         window.location.reload();
     }
+    renameLibrary = () => {
+
+    }
+    getIndexOfLibrary = () => {
+
+    }
+    putSelectedLibraryInFirst = () => {
+
+    }
 }
 
 class Book{
@@ -287,7 +296,7 @@ const addBookBtn = document.getElementById('add-book')
                 const checkbox = document.querySelector('input[type="checkbox"]') as HTMLInputElement
                     selectedBook.read = checkbox.checked;
 
-                // Should point to the active library, and not to mainLibrary. like check in which state is the nav and do that
+                // point always to house[0] and sort the library[] when clicking any library matching that name an put it on [0]
 
                 
 
