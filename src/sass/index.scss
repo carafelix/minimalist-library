@@ -22,23 +22,25 @@ main{
     min-height: 100vh;
     min-width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
+    gap: 5rem;
 }
 nav{
     grid-column-start: 1;
     text-align: end
 }
 #ground{
-    @include center()
+    @include center();
+    justify-content: start;
 }
 
 
 #new-book-div{
     line-height: 1.5;
     position: absolute;
-    top: center;
-    left: center;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 50px;
     background-color: blanchedalmond;
     width: 400px;
@@ -78,6 +80,6 @@ nav{
 .hide{
     opacity: 0;
 }
-div#ground{
+div#ground, nav#sidenav-library-selection{
     transition: all 1s ease;
 }

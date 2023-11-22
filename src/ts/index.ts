@@ -223,7 +223,7 @@ for(const libraries of house){
 
 // DOM declarations
 const body = document.querySelector('body')
-const ground = document.getElementById('ground');
+const ground = document.querySelectorAll('.hidable')
 const main = document.querySelector('main');
         main?.addEventListener('mousedown', () => { 
             const newBookDiv = document.getElementById('new-book-div')
@@ -231,7 +231,7 @@ const main = document.querySelector('main');
             if(newBookDiv) main.removeChild(newBookDiv);
             if(tagifyDropdown) body?.removeChild(tagifyDropdown);
             body?.classList.remove('opaque')
-            ground?.classList.remove('hide')
+            ground?.forEach(n=>n.classList.remove('hide'))
         })
 
 const addBookTemplate = document.getElementById('new-book-template') as HTMLTemplateElement
@@ -241,7 +241,7 @@ const addBookBtn = document.getElementById('add-book')
         addBookBtn?.addEventListener('click',(ev) => {
             ev.stopPropagation()
             body?.classList.add('opaque')
-            ground?.classList.add('hide')
+            ground?.forEach(n=>n.classList.add('hide'))
 
             main?.appendChild(addBookTemplate.content.cloneNode(true))
             const addBookDiv = document.getElementById('new-book-div');
@@ -324,8 +324,6 @@ test.addLibrary(xxxLibrary)
 
 // *** END ***
 
-console.log('vetis');
-console.log('ana');
 
 
 
