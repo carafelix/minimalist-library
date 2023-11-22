@@ -6,3 +6,4 @@ tmp
 *.dtmp
 *.bkp
 build/out.js
+out_copy.js

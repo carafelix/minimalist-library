@@ -12,6 +12,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
-    "@types/yaireo__tagify": "^4.17.5"
+    "@types/yaireo__tagify": "^4.17.5",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
   }
 }

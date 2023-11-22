@@ -26,19 +26,6 @@ class Library{
     getBookFromID = () => {
         
     }
-
-    setPassword = () => {
-
-    }
-    changePassword = () => {
-
-    }
-    deletePassword = () => {
-
-    }
-    forgotPassword = () => {
-
-    }
 }
 
 class House extends Array<Library>{
@@ -71,7 +58,7 @@ class House extends Array<Library>{
         this.push(new Library(l));
     } 
 
-    setDOMlibrary = (l:Library) => {
+    setDOMlibrary (l:Library) {
         const anchorTemplate = document.getElementById('lib-template') as HTMLTemplateElement;
               nav?.appendChild(anchorTemplate.content.cloneNode(true));
 
@@ -80,11 +67,15 @@ class House extends Array<Library>{
         anchor.setAttribute('href', `#${l.nameToId()}`);
         anchor.setAttribute('id', `${l.nameToId()}-library`)
         anchor.innerText = `${l.name}`
+
+        anchor.addEventListener('click',() => {
+            this.sortHouseBySelectedLibrary(l)
+        })
     }
     unsetDOMlibrary(l:Library){
         const domL = document.getElementById(l.nameToId());
         if(!domL) return 'not okay';
-        
+
         nav?.removeChild(domL)
     }
 
@@ -106,7 +97,20 @@ class House extends Array<Library>{
     getIndexOfLibrary = () => {
 
     }
-    putSelectedLibraryInFirst = () => {
+    sortHouseBySelectedLibrary = (l:Library) => {
+        this.sort((a,b)=>a==l ? -1 : 1 )
+    }
+
+    setPassword = (pass:string) => {
+        this.password = pass
+    }
+    changePassword = (pass:string) => {
+    }
+
+    deletePassword = () => {
+        this.password = undefined
+    }
+    forgotPassword = () => {
 
     }
 }
@@ -208,7 +212,6 @@ class dropdownBooks{
             this.volume.description
         )
     }
-
 }
 
 
@@ -268,7 +271,6 @@ for(const libraries of house){
 // DOM declarations and manipulaiton
 const body = document.querySelector('body')
 const ground = document.querySelectorAll('.hidable')
-
 const nav = document.querySelector('nav');
 
 
@@ -388,26 +390,12 @@ const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 /** Functions **/
 
 
-
-
-// google api calls
-
-
-const test_isbn = '9789568268992'
-const inputText = 'Lezama+Lima+Paradiso'
+/** Exports **/
 
 
 
 
 
-
-
-// tagify options
-
-
-
-
-      
 
 
 async function digestPassword(password:string) { // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
