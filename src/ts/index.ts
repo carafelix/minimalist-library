@@ -100,7 +100,7 @@ class House extends Array<Library>{
 
     }
     sortHouseBySelectedLibrary = (l:Library) => {
-        this.sort((a,b)=>a==l ? -1 : 1 )
+        this.sort((a,b)=>a===l ? -1 : 1)
     }
 
     setPassword = (pass:string) => {

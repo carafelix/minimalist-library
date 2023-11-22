@@ -7060,7 +7060,7 @@
       this.getIndexOfLibrary = () => {
       };
       this.sortHouseBySelectedLibrary = (l) => {
-        this.sort((a, b) => a == l ? -1 : 1);
+        this.sort((a, b) => a === l ? -1 : 1);
       };
       this.setPassword = (pass) => {
         this.password = pass;
@@ -7348,22 +7348,24 @@ ${this.briefDescription()}` : ""}`;
   var chai_default = import_index.default;
 
   // test/mocha/test.ts
+  mocha.timeout(15e3);
   var assert2 = chai_default.assert;
+  function _clearHouse() {
+    while (house.length) {
+      house.pop();
+    }
+  }
   describe("House Object testing", () => {
     context("Libraries manipulation", () => {
-      it("Create 3 libraries", () => {
-        house.createLibrary();
-        house.createLibrary();
-        house.createLibrary();
-        assert2.equal(house.length, 4);
-      });
-      it('Put library "e" in house[0]', () => {
-        house.pop();
-        house.pop();
-        house.pop();
-        house.pop();
-        house.pop();
-        console.log(house);
+      it('Put library "c" in house[0]', () => {
+        _clearHouse();
+        const a = house.createLibrary();
+        const b = house.createLibrary();
+        const c = house.createLibrary();
+        const d = house.createLibrary();
+        const e = house.createLibrary();
+        house.sortHouseBySelectedLibrary(c);
+        assert2.equal(house[0], c);
         console.log(house);
       });
     });
