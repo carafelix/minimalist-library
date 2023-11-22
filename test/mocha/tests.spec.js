@@ -263,6 +263,6 @@ function digestPassword(password) {
   });
 }
 //#endregion
-
-
+console.log(mocha);
+console.log(chai);
 console.log(house);
