@@ -23,9 +23,21 @@ class Library{
         return this.name.replace(/\s/g, '-').toLowerCase()
     }
 
+    isDuplicateBook = (incomingBook : Book) => {
+       for(const book of this.storage){
+        if(incomingBook.author === book.author && 
+           incomingBook.title === book.title){
+            return true
+        }
+       }
+        return false
+    }
+
     getBookFromID = () => {
         
     }
+
+
 }
 
 class House extends Array<Library>{
@@ -52,7 +64,7 @@ class House extends Array<Library>{
             l = prompt('Input new library name');
             if(l === 'foo') l = 'notFoo';
         }
-        while(this.includesDuplicates(l))
+        while(this.isDuplicateLibrary(l))
         
         if(!l) return;
 
@@ -62,7 +74,7 @@ class House extends Array<Library>{
         return newBornLibrary
     } 
 
-    setDOMlibrary (l:Library) {
+    pushDOMlibrary (l:Library) {
         const anchorTemplate = document.getElementById('lib-template') as HTMLTemplateElement;
               nav?.appendChild(anchorTemplate.content.cloneNode(true));
 
@@ -73,17 +85,26 @@ class House extends Array<Library>{
         anchor.innerText = `${l.name} Library`
 
         anchor.addEventListener('click',() => {
-            this.sortHouseBySelectedLibrary(l)
+
+            this.sortHouseBySelectedLibrary(l);
+            const allAnchors = document.querySelectorAll('.libraries');
+
+            allAnchors.forEach(a => {
+                a.classList.remove('active')
+            });
+
+            anchor.classList.add('active')
         })
+        if(l === house[0]) anchor.classList.add('active') // set the first library as active when the DOM loads for the first time
     }
-    unsetDOMlibrary(l:Library){
+    popDOMlibrary(l:Library){
         const domL = document.getElementById(l.nameToId());
         if(!domL) return 'not okay';
 
         nav?.removeChild(domL)
     }
 
-    includesDuplicates(inputName:string | null){
+    isDuplicateLibrary(inputName:string | null){
         if(!inputName) return false;
 
        for(const l of this){
@@ -280,27 +301,23 @@ const nav = document.querySelector('nav');
 
 // re-populate old libraries into nav
 
-    house.forEach((l)=>house.setDOMlibrary(l))
+    house.forEach((l)=>house.pushDOMlibrary(l))
 
 const addLibraryBtn = document.getElementById('new-library-btn');
         addLibraryBtn?.addEventListener('click',()=>{
             const newBorn = house.createLibrary();
             if (!newBorn) return;
-            house.setDOMlibrary(newBorn);
+            house.pushDOMlibrary(newBorn);
         })
 
 const main = document.querySelector('main');
         main?.addEventListener('mousedown', () => { 
-            const newBookDiv = document.getElementById('new-book-div')
-            const tagifyDropdown = document.querySelector('.tagify__dropdown')
-            if(newBookDiv) main.removeChild(newBookDiv);
-            if(tagifyDropdown) body?.removeChild(tagifyDropdown);
-            body?.classList.remove('opaque')
-            ground?.forEach(n=>n.classList.remove('hide'))
+            DOMremoveNewBookDiv()
         })
 
 const addBookTemplate = document.getElementById('new-book-template') as HTMLTemplateElement
     
+
     
 const addBookBtn = document.getElementById('add-book')
         addBookBtn?.addEventListener('click',(ev) => {
@@ -357,18 +374,22 @@ const addBookBtn = document.getElementById('add-book')
 
             addBookForm?.addEventListener('submit',(ev)=>{
                 ev.preventDefault();
-                const selectedBook : Book = titleSelect.value[0].googleVolumeInfoToBook()
+                if(!titleSelect.value[0]) return console.error('select a book lol') ;
+                const selectedBook : Book = titleSelect.value[0].googleVolumeInfoToBook();
                 const checkbox = document.querySelector('input[type="checkbox"]') as HTMLInputElement
                     selectedBook.read = checkbox.checked;
-
-                house[0].addBook(selectedBook)
-
-                // point always to house[0] and sort the library[] when clicking any library matching that name an put it on [0]
-
                 
+                // it point always to house[0] and sort house when clicking any library matching that name and put it on [0]
 
+                if(!(house[0].isDuplicateBook(selectedBook))){
+                    house[0].addBook(selectedBook)
+                }
 
-                })
+                DOMremoveNewBookDiv();
+
+                // refresh stand div 
+                
+            })
         })
 
 
@@ -394,13 +415,16 @@ const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 
 /** Functions **/
 
+// DOM FUNCTIONS
 
-/** Exports **/
-
-
-
-
-
+function DOMremoveNewBookDiv(){
+    const newBookDiv = document.getElementById('new-book-div')
+            const tagifyDropdown = document.querySelector('.tagify__dropdown')
+            if(newBookDiv) main!.removeChild(newBookDiv);
+            if(tagifyDropdown) body?.removeChild(tagifyDropdown);
+            body?.classList.remove('opaque')
+            ground?.forEach(n=>n.classList.remove('hide'))
+}
 
 
 async function digestPassword(password:string) { // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
@@ -414,7 +438,14 @@ async function digestPassword(password:string) { // https://developer.mozilla.or
     return hashHex;
   }
 
+  function shortlifyURL(url:URL) {
+    url.href
+  }
 
+  
+
+
+  // data
 
 const bookGenres = ["Mystery","Thriller","Science Fiction","Fantasy","Romance","Historical Fiction","Biography","Autobiography","Memoir","Self-Help","Travel","Science","Dystopian","Adventure","Children's Literature","Young Adult","Classic","Poetry","Drama","Comedy","Satire","Crime","Suspense","Detective","Espionage","Legal","Psychological","Gothic","Paranormal","Horror","Space Opera","Cyberpunk","Alternate History","Time Travel","High Fantasy","Urban Fantasy","Epic Fantasy","Historical Fantasy","Magical Realism","Fairy Tales","Mythology","Philosophy","Religion","Spirituality","Cookbooks","Essays","History","Psychology","Sociology","Politics","Economics","True Crime","Sports","Art","Music","Film","Fashion","Food and Drink","Technology","Computer Science","Mathematics","Astronomy","Biology","Chemistry","Physics","Environmental Science","Cultural Studies","Literary Theory","Gender Studies","Race and Ethnicity","LGBT+ Studies","Political Science","Autobiography","Biography","Memoir","Letters","Diaries","Essay","Speech","Lecture","Sermon","Journalism","Reference","Encyclopedia","Dictionaries"];
 

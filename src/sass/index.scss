@@ -83,3 +83,8 @@ nav{
 div#ground, nav#sidenav-library-selection{
     transition: all 1s ease;
 }
+.active{
+    border: 2px #32a1ce solid;
+    padding: 5px;
+    border-radius: 2px;
+}
