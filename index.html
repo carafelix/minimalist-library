@@ -12,184 +12,23 @@
     <main>
         <nav id="sidenav-library-selection" class="hidable">
             <input type="button" id="new-library-btn" value="create library">
-            <div id="libraries-div"></div>
+            <div id="libraries-div">
+                <template id="lib-template">
+                    <a href="#foo" id="foo-library" class="libraries">Foo Library</a>
+                </template>
+            </div>
         </nav>
 
         <div id="stand" class="prevent-select">
-            <!-- books -->
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            <span class="book-container"><span class="book"></span></span>
-            
+            <template id="book-template">
+                <span class="book-container"><span class="book" data-id=0></span></span>
+            </template>
         </div>
 
-        <div id="ground" class="hidable">
 
-            <div id="library-interact">
-                
-                <div class="search">
-                    <span class="material-symbols-rounded">search</span>
-                    <input type="search" name="book-lookup" id="lookup">
-                </div>
+            <div id="library-interact" class="hidable">
+                <span class="material-symbols-rounded">search</span>
+                <input type="search" name="book-lookup" id="lookup" placeholder="Search in your Books">
                 <input type="button" value="Add Book" id="add-book">
                 <select name="sort-by" id="sort-by">
                     <option value="sort-by-title">Sort by Title</option>
@@ -200,7 +39,6 @@
 
                 </select>
             </div>
-        </div>
 
         <template id="new-book-template">
             <div id="new-book-div">
@@ -215,9 +53,7 @@
             </div>
         </template>
 
-        <template id="lib-template">
-            <a href="#foo" id="foo-library" class="libraries">Foo Library</a>
-        </template>
+        
         
     </main>
 </body>

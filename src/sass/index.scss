@@ -29,7 +29,6 @@ main{
     grid-template-rows: repeat((2, 1fr));
     align-items: center;
     max-width: 800px;
-
 }
 
 
@@ -112,10 +111,10 @@ nav{
     grid-column-end: span 3;
     @include center();    
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
 
     .book-container{
-        flex-grow: 1;
+        // flex-grow: 1;
         @include center();
         .book{
             flex-shrink: 0;
@@ -128,6 +127,23 @@ nav{
     }
 }
 
+#library-interact{
+    display: grid;
+    grid-template-columns: 24px 1fr 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    justify-items: center;
+}
+
+#sort-by{
+    grid-area: 1 / 3;
+    width: 8ch;
+}
+
+#add-book{
+    grid-area: 2 / 2;
+    max-width: fit-content;
+}
 
 .prevent-select {
     -webkit-user-select: none; /* Safari */

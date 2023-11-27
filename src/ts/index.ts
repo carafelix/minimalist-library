@@ -19,6 +19,9 @@ class Library{
         this.storage.splice(index,1);
     }
 
+    clearLibrary = () =>{
+        this.storage = [];
+    }
 
     nameToId = () => {
         return this.name.replace(/\s/g, '-').toLowerCase()
@@ -36,6 +39,21 @@ class Library{
 
     getBookFromID = () => {
         
+    }
+
+    DOMpopulateWithBooks = () => {
+        this.storage.forEach(_=>{
+            const stand = document.getElementById('stand')
+            const bookTemplate = document.getElementById('book-template') as HTMLTemplateElement;
+            const book = bookTemplate.content.cloneNode(true) as HTMLSpanElement;
+            stand?.appendChild(book)
+        })
+
+        const emptyBooks = document.querySelectorAll('.book');
+        
+        this.storage.forEach((book,i) => {
+            emptyBooks[i].setAttribute('data-id', book.id)
+        });
     }
 
 
@@ -255,7 +273,6 @@ class dropdownBooks extends preBook{
 
 
 
-
 class URLHouseParams extends URLSearchParams{
     isHouse = () =>{    // TO-DO check every function inside every librarie and book to match the prototype
         const encodedStr = this.get('house')
@@ -285,6 +302,8 @@ class URLHouseParams extends URLSearchParams{
 
 
 import initialMainLibraryBooksJSON from './main_initial.json';
+import { log } from 'console';
+import { emitKeypressEvents } from 'readline';
 
 const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> new preBook(v.volumeInfo).googleVolumeInfoToBook())
 
@@ -295,10 +314,8 @@ const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> ne
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 const mainLibrary = new Library('Main', placeholderBooks)
+mainLibrary.DOMpopulateWithBooks()
 export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
-console.log(mainLibrary);
-
-
 
 // Reintroduce Classes into parsed objects from Cache or URL 
 
@@ -312,7 +329,7 @@ for(const libraries of house){
 
 // DOM declarations and manipulaiton
 const body = document.querySelector('body')
-const ground = document.querySelectorAll('.hidable')
+const hidable = document.querySelectorAll('.hidable')
 const nav = document.getElementById('libraries-div');
 
 
@@ -329,7 +346,7 @@ const addLibraryBtn = document.getElementById('new-library-btn');
 
 const main = document.querySelector('main');
         main?.addEventListener('mousedown', () => { 
-            DOMremoveNewBookDiv()
+            DOMremove_NewBookDiv()
         })
 
 const addBookTemplate = document.getElementById('new-book-template') as HTMLTemplateElement
@@ -340,7 +357,7 @@ const addBookBtn = document.getElementById('add-book')
         addBookBtn?.addEventListener('click',(ev) => {
             ev.stopPropagation()
             body?.classList.add('opaque')
-            ground?.forEach(n=>n.classList.add('hide'))
+            hidable?.forEach(n=>n.classList.add('hide'))
 
             main?.appendChild(addBookTemplate.content.cloneNode(true))
             const addBookDiv = document.getElementById('new-book-div');
@@ -402,7 +419,7 @@ const addBookBtn = document.getElementById('add-book')
                     house[0].addBook(selectedBook)
                 }
 
-                DOMremoveNewBookDiv();
+                DOMremove_NewBookDiv();
 
                 // refresh stand div 
                 
@@ -434,13 +451,13 @@ const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 
 // DOM FUNCTIONS
 
-function DOMremoveNewBookDiv(){
+function DOMremove_NewBookDiv(){
     const newBookDiv = document.getElementById('new-book-div')
             const tagifyDropdown = document.querySelector('.tagify__dropdown')
             if(newBookDiv) main!.removeChild(newBookDiv);
             if(tagifyDropdown) body?.removeChild(tagifyDropdown);
             body?.classList.remove('opaque')
-            ground?.forEach(n=>n.classList.remove('hide'))
+            hidable?.forEach(n=>n.classList.remove('hide'))
 }
 
 
