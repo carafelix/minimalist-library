@@ -7,3 +7,7 @@ tmp
 *.bkp
 build/out.js
 out_copy.js
+tests.spec.js
+mocha.js
+mocha.css
+/test/mocha/index.html

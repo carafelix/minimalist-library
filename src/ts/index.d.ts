@@ -72,19 +72,19 @@ interface googleVolume {
     description?: string;
     industryIdentifiers: IndustryIdentifier[];
     readingModes: ReadingModes;
-    pageCount: number;
+    pageCount?: number;
     printType: string;
     averageRating?: number;
     ratingsCount?: number;
-    maturityRating: string;
-    allowAnonLogging: boolean;
-    contentVersion: string;
+    maturityRating?: string;
+    allowAnonLogging?: boolean;
+    contentVersion?: string;
     panelizationSummary?: PanelizationSummary;
     imageLinks?: ImageLinks;
-    language: string;
-    previewLink: string;
-    infoLink: string;
-    canonicalVolumeLink: string;
+    language?: string;
+    previewLink?: string;
+    infoLink?: string;
+    canonicalVolumeLink?: string;
     categories?: string[];
   }
   

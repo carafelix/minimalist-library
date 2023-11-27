@@ -5,7 +5,9 @@
     font-size: 20px;
     box-sizing: border-box;
     vertical-align: text-top;
- 
+}
+a{
+    text-decoration: none;
 }
 
 @mixin center{
@@ -15,24 +17,24 @@
 }
 
 body{
-    transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1); 
+    min-height: 100vh;
+    min-width: 100vw;
+    @include center();
 }
 
 main{
-    min-height: 100vh;
-    min-width: 100vw;
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1); 
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat((2, 1fr));
     align-items: center;
-    gap: 5rem;
+    max-width: 800px;
+
 }
-nav{
-    grid-column-start: 1;
-    text-align: end
-}
+
+
 #ground{
-    @include center();
-    justify-content: start;
+    grid-row-start: 2;
 }
 
 
@@ -80,11 +82,55 @@ nav{
 .hide{
     opacity: 0;
 }
-div#ground, nav#sidenav-library-selection{
+div#ground, nav#sidenav-library-selection, div.hidable{
     transition: all 1s ease;
 }
 .active{
-    border: 2px #32a1ce solid;
+    background-color: azure;
     padding: 5px;
     border-radius: 2px;
 }
+
+nav{
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    gap: 1rem;
+}
+
+#libraries-div{
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    gap: 0.3rem;
+}
+
+
+
+#stand{
+    grid-column-end: span 3;
+    @include center();    
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .book-container{
+        flex-grow: 1;
+        @include center();
+        .book{
+            flex-shrink: 0;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+            background-color: rgb(92, 65, 65);
+            height: 40px;
+            width: 5px;
+        }
+    }
+}
+
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }

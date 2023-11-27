@@ -1,0 +1,831 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 10,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "sCxaDwAAQBAJ",
+      "etag": "cyJUwV28j0Y",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/sCxaDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Diadem: Selected Poems",
+        "authors": [
+          "Marosa di Giorgio"
+        ],
+        "publisher": "BOA Editions, Ltd.",
+        "publishedDate": "2012-10-16",
+        "description": "Marosa di Giorgio has one of the most distinct and recognizable voices in Latin American poetry. Her surreal and fable-like prose poems invite comparison to Franz Kafka, Julio Cortázar, or even contemporary American poets Russell Edson and Charles Simic. But di Giorgio's voice, imagery, and themes—childhood, the Uruguayan countryside, a perception of the sacred—are her own. Previously written off as \"the mad woman of Uruguayan letters,\" di Giorgio's reputation has blossomed in recent years. Translator Adam Giannelli's careful selection of poems spans the enormous output of di Giorgio's career to help further introduce English-language readers to this vibrant and original voice. Marosa di Giorgio was born in Salto, Uruguay, in 1932. Her first book Poemas was published in 1953. Also a theater actress, she moved to Montevideo in 1978, where she lived until her death in 2004.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781934414989"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1934414980"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 170,
+        "printType": "BOOK",
+        "categories": [
+          "Poetry"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=sCxaDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=sCxaDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=sCxaDwAAQBAJ&printsec=frontcover&dq=inauthor:marosa+di+giorgio&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=sCxaDwAAQBAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Diadem_Selected_Poems.html?hl=&id=sCxaDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Diadem_Selected_Poems-sample-epub.acsm?id=sCxaDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Diadem_Selected_Poems-sample-pdf.acsm?id=sCxaDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=sCxaDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Marosa di Giorgio has one of the most distinct and recognizable voices in Latin American poetry."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "fMHSAQAACAAJ",
+      "etag": "lEJlg+HBzco",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/fMHSAQAACAAJ",
+      "volumeInfo": {
+        "title": "I Remember Nightfall",
+        "authors": [
+          "Marosa Di Giorgio"
+        ],
+        "publishedDate": "2017",
+        "description": "Poetry. Latino/Latina Studies. Translated from the Spanish by Jeannine Pitas in a bilingual edition. Cover art by Basil King. This new translation of Marosa di Giorgio, one of Uruguay's most famous poets, includes four book-length poems from the middle of her career: The History of Violets (1965); Magnolia (1968); The War of the Orchards (1971); and The Native Garden is in Flames (1975). Occupying the same childhood landscapes that may be familiar to English-language readers from the previously published volume The History of Violets (Ugly Duckling Presse, 2010), these serial prose poems explore memory, familial relationships, erotic desire, and war. Marosa di Giorgio uses the recurring setting of a garden as a stage for the ongoing encounter of nature and the supernatural.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1937027597"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781937027599"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 0,
+        "printType": "BOOK",
+        "categories": [
+          "Prose poems, Spanish"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=fMHSAQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=fMHSAQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=fMHSAQAACAAJ&dq=inauthor:marosa+di+giorgio&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=fMHSAQAACAAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/I_Remember_Nightfall.html?hl=&id=fMHSAQAACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=fMHSAQAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Occupying the same childhood landscapes that may be familiar to English-language readers from the previously published volume The History of Violets (Ugly Duckling Presse, 2010), these serial prose poems explore memory, familial ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "TD1VMQAACAAJ",
+      "etag": "4PYuXjb9k0I",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/TD1VMQAACAAJ",
+      "volumeInfo": {
+        "title": "POEMS OF OLGA OROZCO MAROSA DI",
+        "authors": [
+          "Olga Orozco Marosa Di Giorgio",
+          "Jorge Palma"
+        ],
+        "publisher": "Americas Poetry",
+        "publishedDate": "2017-02-01",
+        "description": "This first volume in Vagabond's new Americas series brings together three poets from South America spanning three different generations, each with a distinct voice and a unique world to explore.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1922181803"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781922181800"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 152,
+        "printType": "BOOK",
+        "categories": [
+          "Poetry"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=TD1VMQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=TD1VMQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=TD1VMQAACAAJ&dq=inauthor:marosa+di+giorgio&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=TD1VMQAACAAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/POEMS_OF_OLGA_OROZCO_MAROSA_DI.html?hl=&id=TD1VMQAACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=TD1VMQAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This first volume in Vagabond&#39;s new Americas series brings together three poets from South America spanning three different generations, each with a distinct voice and a unique world to explore: Olga Orozco, Marosa di Giorgio and Jorge ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "WaEIzgEACAAJ",
+      "etag": "m7/lKFA2+1c",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/WaEIzgEACAAJ",
+      "volumeInfo": {
+        "title": "Carnation and Tenebrae Candle",
+        "authors": [
+          "Marosa di Giorgio"
+        ],
+        "publishedDate": "2020-11-02",
+        "description": "Poetry. Latinx Studies. Women's Studies. Translated by Jeannine Marie Pitas. \"This new collection by Marosa di Giorgio, long considered a major figure in Latin American literature, is the work of a translator who has immersed herself, with great thoughtfulness and dedication, in the life of a writer whose poetry is foreboding, mystical, dangerous and magnificent. Everywhere in di Giorgio's oeuvre, there are wars, crimes, monsters, possessed plants and animals, ghosts, illnesses and miracles animating a world that is always on the verge of explosion. Di Giorgio's writing is as foreboding as it is tentacular, as intricate as it is unsettling. Jeannine Marie Pitas' ongoing and remarkable engagement with di Giorgio has brought us an exciting and valuable gift.\"--Daniel Borzutzky \"'It seemed as if everything was coming to an end,' writes Marosa di Giorgio in the first section of CARNATION AND TENEBRAE CANDLE, preparing the reader for the wondrous and terrifying world of contradictions that will follow: a lush countryside filled with enormous hares and enchanted begonias, meals of rats and apples as well as a 'wheat field of stars,' where readers must constantly renegotiate the borders between the inanimate and the living, the living and the dead. Even the most familiar relations transform until a father becomes the 'Chosen One' as well as 'an Oak Tree of Fine Understanding,' and a mother can be both savior to and the victim of her daughter. There are ghosts and 'war storms,' rapes and resurrections in a location both unmappable and as recognizable as the first prayers whispered from the mouth of a child who cannot possibly understand them. But there's nothing naïve about di Giorgio's work, and no other voice that sounds quite like hers. '[J]ust as I was walking among the eucalyptus apothecaries, at that time when the walls become filled with stars,' di Giorgio writes, 'I saw the language, and I immediately understood it, as if it had always been my own.' Jeannine Marie Pitas's English translations have helped bring this Uruguayan writer to a new audience. CARNATION AND TENEBRAE CANDLE will continue to solidify di Giorgio as a major voice from Latin America.\"--Susan Briante \"In di Giorgio's childhood Salto, a wide-ranging and ever-vibrant flora and fauna nourished the memories she'd draw on for her work's extraordinary transfigurations. Eggs, insects, and reptiles exit or enter the body, either being born or invading the body's depths, generating an intense and shocking pleasure. Despite her Italian background, she affirms her belonging to an ancestral earth, to an indigenous enclave that nourishes her: she paints herself as 'a native princess under her anacahuita tree.' Bringing this landscape to life became a task of joy and responsibility for di Giorgio, her own unique mission, and one which she devoted herself to with passion and perseverance.\"--Roberto Echavarren \"Marosa di Giorgio's CARNATION AND TENEBRAE CANDLE is a complex world, where the present and past coexist, where animals and plants are humanized, and where the oneiric, the real, and the magical operate on the same plane, guided by an immersive, surrealist rhythm.\"--Laura Cesarco Eglin",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1945720212"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781945720215"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 126,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=WaEIzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=WaEIzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=WaEIzgEACAAJ&dq=inauthor:marosa+di+giorgio&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=WaEIzgEACAAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Carnation_and_Tenebrae_Candle.html?hl=&id=WaEIzgEACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=WaEIzgEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "&quot;This new collection by Marosa di Giorgio, long considered a major figure in Latin American literature, is the work of a translator who has immersed herself, with great thoughtfulness and dedication, in the life of a writer whose poetry is ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "oMJFAQAAIAAJ",
+      "etag": "AM49V3uooGQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/oMJFAQAAIAAJ",
+      "volumeInfo": {
+        "title": "The History of Violets",
+        "authors": [
+          "Marosa Di Giorgio"
+        ],
+        "publishedDate": "2010",
+        "description": "Originally published in 1965, The History of Violets (Historial de las violetas) twists the familiar face of a family farm, populating the fields and grounds with gods, monsters, and a whole \"foamy army\" of extras. Di Giorgio--whom Kent Johnson hails as \"one of the most spectacular and strange Latin American poets of the past fifty years\"--locks the natural and supernatural in a perilous dance, balancing humor and violence, beauty and danger, simple childhood memory and complex domestic drama. With disarming grace, these poems leave the reader swirling about, among the flowers, where no one is safe. \"There's a lot at stake here, namely the opportunity for a new generation of American poets to take di Giorgio as a model for wresting the 'poetry of witness' away from humanism's easy faith in testimony and remembering that the imagination is the organ of compassion.\" --Farid Matuk",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105217003875"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 92,
+        "printType": "BOOK",
+        "categories": [
+          "Uruguayan poetry"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=oMJFAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=oMJFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=oMJFAQAAIAAJ&q=inauthor:marosa+di+giorgio&dq=inauthor:marosa+di+giorgio&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=oMJFAQAAIAAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_History_of_Violets.html?hl=&id=oMJFAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=oMJFAQAAIAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Originally published in 1965, The History of Violets (Historial de las violetas) twists the familiar face of a family farm, populating the fields and grounds with gods, monsters, and a whole &quot;foamy army&quot; of extras."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "ciymwCyn0T4C",
+      "etag": "oGaD7oVR8fY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/ciymwCyn0T4C",
+      "volumeInfo": {
+        "title": "La flor de lis",
+        "authors": [
+          "Marosa Di Giorgio"
+        ],
+        "publisher": "El cuenco de plata",
+        "publishedDate": "2004",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "9872127468"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9789872127466"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 136,
+        "printType": "BOOK",
+        "categories": [
+          "Poetry"
+        ],
+        "averageRating": 2,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.4.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=ciymwCyn0T4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=ciymwCyn0T4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=ciymwCyn0T4C&printsec=frontcover&dq=inauthor:marosa+di+giorgio&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=ciymwCyn0T4C&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/La_flor_de_lis.html?hl=&id=ciymwCyn0T4C"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/La_flor_de_lis-sample-pdf.acsm?id=ciymwCyn0T4C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=ciymwCyn0T4C&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "vGZlAAAAMAAJ",
+      "etag": "3hg/1f4JFNk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/vGZlAAAAMAAJ",
+      "volumeInfo": {
+        "title": "Misales",
+        "subtitle": "relatos eróticos",
+        "authors": [
+          "Marosa Di Giorgio"
+        ],
+        "publisher": "El cuenco de plata",
+        "publishedDate": "2005",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015064895033"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 148,
+        "printType": "BOOK",
+        "categories": [
+          "Erotic stories, Uruguayan"
+        ],
+        "averageRating": 1,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.3.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=vGZlAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=vGZlAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=vGZlAAAAMAAJ&q=inauthor:marosa+di+giorgio&dq=inauthor:marosa+di+giorgio&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=vGZlAAAAMAAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Misales.html?hl=&id=vGZlAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=vGZlAAAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "V8neHAAACAAJ",
+      "etag": "h6QPG3ijzSI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/V8neHAAACAAJ",
+      "volumeInfo": {
+        "title": "Magnolia",
+        "authors": [
+          "Marosa Di Giorgio"
+        ],
+        "publishedDate": "1965",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:10482373"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 64,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=V8neHAAACAAJ&dq=inauthor:marosa+di+giorgio&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=V8neHAAACAAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Magnolia.html?hl=&id=V8neHAAACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=V8neHAAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "sCxaDwAAQBAJ",
+      "etag": "uzCm6E2wdII",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/sCxaDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Diadem: Selected Poems",
+        "authors": [
+          "Marosa di Giorgio"
+        ],
+        "publisher": "BOA Editions, Ltd.",
+        "publishedDate": "2012-10-16",
+        "description": "Marosa di Giorgio has one of the most distinct and recognizable voices in Latin American poetry. Her surreal and fable-like prose poems invite comparison to Franz Kafka, Julio Cortázar, or even contemporary American poets Russell Edson and Charles Simic. But di Giorgio's voice, imagery, and themes—childhood, the Uruguayan countryside, a perception of the sacred—are her own. Previously written off as \"the mad woman of Uruguayan letters,\" di Giorgio's reputation has blossomed in recent years. Translator Adam Giannelli's careful selection of poems spans the enormous output of di Giorgio's career to help further introduce English-language readers to this vibrant and original voice. Marosa di Giorgio was born in Salto, Uruguay, in 1932. Her first book Poemas was published in 1953. Also a theater actress, she moved to Montevideo in 1978, where she lived until her death in 2004.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781934414989"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1934414980"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 170,
+        "printType": "BOOK",
+        "categories": [
+          "Poetry"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=sCxaDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=sCxaDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=sCxaDwAAQBAJ&pg=PT19&dq=inauthor:marosa+di+giorgio&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=sCxaDwAAQBAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Diadem_Selected_Poems.html?hl=&id=sCxaDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Diadem_Selected_Poems-sample-epub.acsm?id=sCxaDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Diadem_Selected_Poems-sample-pdf.acsm?id=sCxaDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=sCxaDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003edi Giorgio\u003c/b\u003e and Edgardo Russo (Buenos Aires: El Cuenco de Plata, 2010), 40. 3. Ibid., 72. 4. César Aira, Diccionario de autores latinoamericanos, 174. 5. Marosa \u003cb\u003edi Giorgio\u003c/b\u003e, No develarás el misterio, 41, 76. 6. Russell Edson, “The Prose&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "oMJFAQAAIAAJ",
+      "etag": "YD1v5kLoW7U",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/oMJFAQAAIAAJ",
+      "volumeInfo": {
+        "title": "The History of Violets",
+        "authors": [
+          "Marosa Di Giorgio"
+        ],
+        "publishedDate": "2010",
+        "description": "Originally published in 1965, The History of Violets (Historial de las violetas) twists the familiar face of a family farm, populating the fields and grounds with gods, monsters, and a whole \"foamy army\" of extras. Di Giorgio--whom Kent Johnson hails as \"one of the most spectacular and strange Latin American poets of the past fifty years\"--locks the natural and supernatural in a perilous dance, balancing humor and violence, beauty and danger, simple childhood memory and complex domestic drama. With disarming grace, these poems leave the reader swirling about, among the flowers, where no one is safe. \"There's a lot at stake here, namely the opportunity for a new generation of American poets to take di Giorgio as a model for wresting the 'poetry of witness' away from humanism's easy faith in testimony and remembering that the imagination is the organ of compassion.\" --Farid Matuk",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105217003875"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 92,
+        "printType": "BOOK",
+        "categories": [
+          "Uruguayan poetry"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=oMJFAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=oMJFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=oMJFAQAAIAAJ&q=inauthor:marosa+di+giorgio&dq=inauthor:marosa+di+giorgio&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=oMJFAQAAIAAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_History_of_Violets.html?hl=&id=oMJFAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=oMJFAQAAIAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Marosa \u003cb\u003eDi Giorgio\u003c/b\u003e. Poetry $15.00 There is no doubt at this point that Marosa \u003cb\u003edi Giorgio\u003c/b\u003e is one of the greatest Latin American writers of the twentieth century. Her work, which cuts across all genres, has opened up new avenues for poetry&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "IS17zdkCWysC",
+      "etag": "QhkpI1sM38Q",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/IS17zdkCWysC",
+      "volumeInfo": {
+        "title": "Fragmentos de la Vida, Lo que escribo, Cuento y Canto",
+        "authors": [
+          "Rodrigo Antonio Navarro Fernandez"
+        ],
+        "publisher": "Palibrio",
+        "publishedDate": "2012-06",
+        "description": "Es un compendio pluricultural artístico musical literario, que cuenta con pensamientos, poesías, canciones y cinco historias que cuento, en este trabajo literario, haciendo una recopilación de canciones escritas y difundidas en el trascurrir de mi vida, como músico, cantante, compositor, educador, abogado y defensor de los derechos humanos; Trabajo literario que pretendo difundir entre la población que de una u otra forma este vinculada con las artes y con la intención de desarrollar habilidades que alejen a nuestro adultos mayores del mal de Alzheimer ya que en este mismo trabajo literario trato de instar a realizar diferentes actividades que inducirían a un proceso de estimulación cognitiva; Aprendizaje este adquirido en mi desempeño como director de la fundación Alzheimer de Venezuela capitulo Zulia, desde donde estamos trabajando para llevar la información necesaria y conocer mas de esta enfermedad para difundir entre el mayor numero de personas posible; Quiero dejar en este apreciado trabajo la intención de compartir algunos saberes adquiridos y difundirlos en cualquier parte del mundo por intermedio del taller de estimulación cognitiva Alzheimer y familia el cual he estado difundiendo desde el 2010. que no es otra cosa que instar al colectivo a realizar estas actividades, agradeciendo con humildad el que se puedan convertir en multiplicador de esta noble intención de llevar luces y conocimientos al que las necesite, mil gracias. Si desea establecer un contacto directo: Rodrigo-navarro1@hotmail.com 02617332671, 04140709524, 04166626343. Maracaibo, Estado Zulia, Venezuela.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781463327811"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1463327811"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 207,
+        "printType": "BOOK",
+        "categories": [
+          "Literary Collections"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.3.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=IS17zdkCWysC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=IS17zdkCWysC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=IS17zdkCWysC&pg=PA77&dq=intitle:fragmentos+a+su+iman&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=IS17zdkCWysC&dq=intitle:fragmentos+a+su+iman&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Fragmentos_de_la_Vida_Lo_que_escribo_Cue.html?hl=&id=IS17zdkCWysC"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Fragmentos_de_la_Vida_Lo_que_escribo_Cue-sample-epub.acsm?id=IS17zdkCWysC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Fragmentos_de_la_Vida_Lo_que_escribo_Cue-sample-pdf.acsm?id=IS17zdkCWysC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=IS17zdkCWysC&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eimán\u003c/b\u003e Eres sanguijuela cuando quieres Cuando te toca el deseo nada más Dulzura amarga con veneno de Alacrán unos zapatos viejos que botar. Carita de ángel que simula la verdad Que te atrapa y te pegas como \u003cb\u003eimán\u003c/b\u003e Engañadora te resistes al&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "9h-wPAAACAAJ",
+      "etag": "m9Mv/cbo3A0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/9h-wPAAACAAJ",
+      "volumeInfo": {
+        "title": "Remembrance of Things Past, Part One Combray",
+        "authors": [
+          "Marcel Proust"
+        ],
+        "publishedDate": "2001-01-01",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0605010765"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780605010765"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "en",
+        "previewLink": "http://books.google.cl/books?id=9h-wPAAACAAJ&dq=intitle:Combray+inauthor:proust&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=9h-wPAAACAAJ&dq=intitle:Combray+inauthor:proust&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Remembrance_of_Things_Past_Part_One_Comb.html?hl=&id=9h-wPAAACAAJ"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=9h-wPAAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ]
+}

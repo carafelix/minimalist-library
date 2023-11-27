@@ -5,8 +5,9 @@ class Library{
     public storage : Book[]
     constructor(
         public name : string,
+        public initialBooks? : Book[]
     ){
-        this.storage = []
+        this.storage = (initialBooks || [])
     }
 
     addBook = (b:Book) => {
@@ -218,10 +219,9 @@ class selectTagify extends Tagify{
     }
 }
 
-class dropdownBooks{
+
+class preBook{
     constructor(
-        public title : string,
-        public value : string,
         public volume : VolumeInfo
     ){}
 
@@ -238,6 +238,18 @@ class dropdownBooks{
         )
     }
 }
+
+class dropdownBooks extends preBook{
+    constructor(
+        public title : string,
+        public value : string,
+        public volume : VolumeInfo
+    ){
+        super(volume);
+    }
+}
+
+
 
 
 
@@ -272,6 +284,9 @@ class URLHouseParams extends URLSearchParams{
 }
 
 
+import initialMainLibraryBooksJSON from './main_initial.json';
+
+const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> new preBook(v.volumeInfo).googleVolumeInfoToBook())
 
 
 
@@ -279,8 +294,10 @@ class URLHouseParams extends URLSearchParams{
 
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
-const mainLibrary = new Library('Main')
+const mainLibrary = new Library('Main', placeholderBooks)
 export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
+console.log(mainLibrary);
+
 
 
 // Reintroduce Classes into parsed objects from Cache or URL 
@@ -296,7 +313,7 @@ for(const libraries of house){
 // DOM declarations and manipulaiton
 const body = document.querySelector('body')
 const ground = document.querySelectorAll('.hidable')
-const nav = document.querySelector('nav');
+const nav = document.getElementById('libraries-div');
 
 
 // re-populate old libraries into nav
