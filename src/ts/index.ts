@@ -42,15 +42,18 @@ class Library{
     }
 
     DOMpopulateWithBooks = () => {
+        const bookTemplate = document.getElementById('book-template') as HTMLTemplateElement;
+        const stand = document.getElementById('stand') as HTMLDivElement;
+        const oldBooks = document.querySelectorAll('.book-container');
+                oldBooks.forEach(v=>stand.removeChild(v))
+
         this.storage.forEach(_=>{
-            const stand = document.getElementById('stand')
-            const bookTemplate = document.getElementById('book-template') as HTMLTemplateElement;
             const book = bookTemplate.content.cloneNode(true) as HTMLSpanElement;
             stand?.appendChild(book)
         })
 
         const emptyBooks = document.querySelectorAll('.book');
-        
+
         this.storage.forEach((book,i) => {
             emptyBooks[i].setAttribute('data-id', book.id)
         });
@@ -106,6 +109,8 @@ class House extends Array<Library>{
         anchor.addEventListener('click',() => {
 
             this.sortHouseBySelectedLibrary(l);
+            this?.[0].DOMpopulateWithBooks()
+
             const allAnchors = document.querySelectorAll('.libraries');
 
             allAnchors.forEach(a => {
@@ -142,7 +147,7 @@ class House extends Array<Library>{
 
     }
     sortHouseBySelectedLibrary = (l:Library) => {
-        this.sort((a,b)=>a===l ? -1 : 1)
+        this.sort((a,b)=>a===l ? -1 : 1);
     }
 
     setPassword = (pass:string) => {
@@ -302,8 +307,6 @@ class URLHouseParams extends URLSearchParams{
 
 
 import initialMainLibraryBooksJSON from './main_initial.json';
-import { log } from 'console';
-import { emitKeypressEvents } from 'readline';
 
 const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> new preBook(v.volumeInfo).googleVolumeInfoToBook())
 
@@ -314,7 +317,6 @@ const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> ne
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
 const mainLibrary = new Library('Main', placeholderBooks)
-mainLibrary.DOMpopulateWithBooks()
 export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
 
 // Reintroduce Classes into parsed objects from Cache or URL 
@@ -331,11 +333,17 @@ for(const libraries of house){
 const body = document.querySelector('body')
 const hidable = document.querySelectorAll('.hidable')
 const nav = document.getElementById('libraries-div');
-
+const searchBar = document.getElementById('lookup')
 
 // re-populate old libraries into nav
 
     house.forEach((l)=>house.pushDOMlibrary(l))
+
+// re-populate DOM Books with house[0] library
+
+    house[0].DOMpopulateWithBooks()
+
+
 
 const addLibraryBtn = document.getElementById('new-library-btn');
         addLibraryBtn?.addEventListener('click',()=>{
@@ -417,6 +425,7 @@ const addBookBtn = document.getElementById('add-book')
 
                 if(!(house[0].isDuplicateBook(selectedBook))){
                     house[0].addBook(selectedBook)
+                    house[0].DOMpopulateWithBooks()
                 }
 
                 DOMremove_NewBookDiv();
