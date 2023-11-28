@@ -37,13 +37,10 @@ class Library{
         return false
     }
 
-    getBookFromID = () => {
-        
-    }
-
     DOMpopulateWithBooks = () => {
         const bookTemplate = document.getElementById('book-template') as HTMLTemplateElement;
         const stand = document.getElementById('stand') as HTMLDivElement;
+        // unpopulate before adding the new books
         const oldBooks = document.querySelectorAll('.book-container');
                 oldBooks.forEach(v=>stand.removeChild(v))
 
@@ -55,11 +52,32 @@ class Library{
         const emptyBooks = document.querySelectorAll('.book');
 
         this.storage.forEach((book,i) => {
-            emptyBooks[i].setAttribute('data-id', book.id)
+            emptyBooks[i].setAttribute('data-id', book.id);
+
+            // hover should be inside a dom class ???
+            emptyBooks[i].addEventListener('mouseover', ()=>{
+                
+            })
+
         });
     }
 
+    searchBookMatches = (searchInput : RegExp) : Array<Book["id"]> | null => {
+        const matches : Book["id"][] = []
+        for (const book of this.storage){
+            if(book.author.match(searchInput)){
+                matches.push(book.id)
+            } else if(book.title.match(searchInput)){
+                matches.push(book.id)
+            } else if(book.description?.match(searchInput)){
+                matches.push(book.id)
+            }  // could add genres too 
+        }
 
+        if(matches[0]){
+            return matches
+        } else return null
+    }
 }
 
 class House extends Array<Library>{
@@ -113,7 +131,7 @@ class House extends Array<Library>{
 
             const allAnchors = document.querySelectorAll('.libraries');
 
-            allAnchors.forEach(a => {
+            allAnchors.forEach( a => {
                 a.classList.remove('active')
             });
 
@@ -121,6 +139,7 @@ class House extends Array<Library>{
         })
         if(l === house[0]) anchor.classList.add('active') // set the first library as active when the DOM loads for the first time
     }
+
     popDOMlibrary(l:Library){
         const domL = document.getElementById(l.nameToId());
         if(!domL) return 'not okay';
@@ -288,7 +307,6 @@ class URLHouseParams extends URLSearchParams{
             JSON.parse(decodedStr)
         } catch (err) {
             if (err){
-                console.log(err);
                 return false;
             }
         }
@@ -333,7 +351,7 @@ for(const libraries of house){
 const body = document.querySelector('body')
 const hidable = document.querySelectorAll('.hidable')
 const nav = document.getElementById('libraries-div');
-const searchBar = document.getElementById('lookup')
+
 
 // re-populate old libraries into nav
 
@@ -343,6 +361,29 @@ const searchBar = document.getElementById('lookup')
 
     house[0].DOMpopulateWithBooks()
 
+
+const searchBar = document.getElementById('lookup');
+        searchBar?.addEventListener('input', (ev)=>{  // should be inside a dom manipulation class
+
+            const books = document.querySelectorAll('.book');
+                    books.forEach(b=>{
+                            b.classList.remove('match')
+                    })
+
+            const input = ev.target as HTMLInputElement;
+                if(input.value == '' || input.value == ' ') return ;
+
+            const searchTerm = new RegExp(input.value, 'i');
+
+            const matchingBooks = house[0].searchBookMatches(searchTerm)
+            
+            if(!matchingBooks) return;
+
+                    matchingBooks.forEach(id => {
+                        const targetBook = document.querySelector(`[data-id="${id}"]`)
+                        targetBook?.classList.add('match')
+                    });
+        })
 
 
 const addLibraryBtn = document.getElementById('new-library-btn');
