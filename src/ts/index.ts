@@ -50,14 +50,28 @@ class Library{
         })
 
         const emptyBooks = document.querySelectorAll('.book');
+        
+
 
         this.storage.forEach((book,i) => {
             emptyBooks[i].setAttribute('data-id', book.id);
 
             // hover should be inside a dom class ???
-            emptyBooks[i].addEventListener('mouseover', ()=>{
+            emptyBooks[i].addEventListener('mouseover', (ev)=>{
+                ev.stopPropagation();
+                const mouse = ev as MouseEvent
+                const x = mouse.clientX
+                const y = mouse.clientY
+                if(!hoverBookDiv) return console.error('Hover Div is non existent');
+
+                hoverBookDiv.classList.remove('display-none')
+                hoverBookDiv.style.left=x+"px";
+                hoverBookDiv.style.top=y+"px";
                 
-            })
+            });
+
+
+            
 
         });
     }
@@ -351,6 +365,12 @@ for(const libraries of house){
 const body = document.querySelector('body')
 const hidable = document.querySelectorAll('.hidable')
 const nav = document.getElementById('libraries-div');
+const hoverBookDiv = document.getElementById('hover-book-div');
+
+        hoverBookDiv?.addEventListener('mouseleave', (ev)=>{
+            ev.stopPropagation()
+            hoverBookDiv.classList.add('display-none')
+        });
 
 
 // re-populate old libraries into nav
@@ -396,7 +416,11 @@ const addLibraryBtn = document.getElementById('new-library-btn');
 const main = document.querySelector('main');
         main?.addEventListener('mousedown', () => { 
             DOMremove_NewBookDiv()
+        });
+        main?.addEventListener('mouseover', ()=>{
+            hoverBookDiv?.classList.add('display-none')
         })
+
 
 const addBookTemplate = document.getElementById('new-book-template') as HTMLTemplateElement
     
