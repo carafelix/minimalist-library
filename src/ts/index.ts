@@ -64,6 +64,7 @@ class Library{
                 const y = mouse.clientY
                 if(!hoverBookDiv) return console.error('Hover Div is non existent');
 
+                book.fillDivWithBookValues('hover-book-div',true,true)
                 hoverBookDiv.classList.remove('display-none')
                 hoverBookDiv.style.left=x+"px";
                 hoverBookDiv.style.top=y+"px";
@@ -228,11 +229,19 @@ class Book{
         if(inputID === this.id) return this;
     }
 
-    setAddScreenValues = () => {
-        const div = document.getElementById('book-info');
+    fillDivWithBookValues = (idSelector : string, printAuthor? : boolean, printTitle? : boolean) => {
+        const div = document.getElementById(idSelector);
         if(!div) return;
-        div.innerText = 
-                        `\nPages: ${this.pages}${(this.genre)? `\nGenres: ${this.genre?.join(' ')}` : '' }${(this.description)? `\nDescription:\n${this.briefDescription()}` : '' }`
+        div.innerHTML = '';
+        
+            // Book info should probably be changed to a ul with li instead of this funny string manipulation lol
+        div.innerText = `\n${(printTitle) ? 'Title: ' + this.title + '\n' : ''}\
+                        ${(printAuthor) ? 'Author: ' + this.author + '\n' : ''}\
+                        Pages: ${this.pages}\n\
+                        ${(this.genre)? `\nGenres: ${this.genre?.join(' ')}` : '' }\
+                        ${(this.description)? `\nDescription:\n${this.briefDescription()}` : '' }`
+
+         
 
         let imgEl = document.getElementById('book-img');
 
@@ -363,15 +372,43 @@ for(const libraries of house){
 
 // DOM declarations and manipulaiton
 const body = document.querySelector('body')
-const hidable = document.querySelectorAll('.hidable')
-const nav = document.getElementById('libraries-div');
-const hoverBookDiv = document.getElementById('hover-book-div');
+        body?.addEventListener('mousedown', () => { 
+            DOMremove_NewBookDiv()
+        });
+        body?.addEventListener('mouseover', ()=>{
+            hoverBookDiv?.classList.add('display-none')
+        })
+        body?.addEventListener('mousedown', ()=>{
+            settingsDiv?.classList.add('hide')
+        })
+
+const hidable = document.querySelectorAll('.hidable'),
+      nav = document.getElementById('libraries-div'),
+      hoverBookDiv = document.getElementById('hover-book-div');
 
         hoverBookDiv?.addEventListener('mouseleave', (ev)=>{
             ev.stopPropagation()
             hoverBookDiv.classList.add('display-none')
         });
 
+
+const settingsDiv = document.getElementById('sidenav-library-selection')
+        settingsDiv?.addEventListener('mousedown', (ev)=>{
+            ev.stopPropagation()
+        });
+        
+const settingsBtn = document.getElementById('settings');
+        let active = false;
+        settingsBtn?.addEventListener('mousedown', (ev) => {
+            ev.stopPropagation();
+            if(!active){
+                settingsDiv?.classList.remove('hide')
+                active = true
+            } else {
+                settingsDiv?.classList.add('hide')
+                active = false
+            }
+        })
 
 // re-populate old libraries into nav
 
@@ -414,12 +451,7 @@ const addLibraryBtn = document.getElementById('new-library-btn');
         })
 
 const main = document.querySelector('main');
-        main?.addEventListener('mousedown', () => { 
-            DOMremove_NewBookDiv()
-        });
-        main?.addEventListener('mouseover', ()=>{
-            hoverBookDiv?.classList.add('display-none')
-        })
+        
 
 
 const addBookTemplate = document.getElementById('new-book-template') as HTMLTemplateElement
@@ -473,7 +505,7 @@ const addBookBtn = document.getElementById('add-book')
                     },
                     "change": () => {
                         if(!titleSelect.value[0]) return;
-                        titleSelect.value[0].googleVolumeInfoToBook().setAddScreenValues()
+                        titleSelect.value[0].googleVolumeInfoToBook().fillDivWithBookValues('book-info')
                     }
                     
                 }

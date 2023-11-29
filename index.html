@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-        <nav id="sidenav-library-selection" class="hidable">
+        <nav id="sidenav-library-selection" class="hidable hide">
             <input type="button" id="new-library-btn" value="create library">
             <div id="libraries-div">
                 <template id="lib-template">
@@ -27,7 +27,7 @@
 
 
             <div id="library-interact" class="hidable">
-                <span class="material-symbols-rounded">search</span>
+                <a id="settings"><span class="material-symbols-rounded">settings</span></a>
                 <input type="search" name="book-lookup" id="lookup" placeholder="Search in your Books">
                 <input type="button" value="Add Book" id="add-book">
                 <select name="sort-by" id="sort-by">
