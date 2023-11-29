@@ -372,10 +372,12 @@ for(const libraries of house){
 
 // DOM declarations and manipulaiton
 const body = document.querySelector('body')
-        body?.addEventListener('mousedown', () => { 
+const main = document.querySelector('main');
+
+        main?.addEventListener('mousedown', () => { 
             DOMremove_NewBookDiv()
         });
-        body?.addEventListener('mouseover', ()=>{
+        main?.addEventListener('mouseover', ()=>{
             hoverBookDiv?.classList.add('display-none')
         })
         body?.addEventListener('mousedown', ()=>{
@@ -450,7 +452,6 @@ const addLibraryBtn = document.getElementById('new-library-btn');
             house.pushDOMlibrary(newBorn);
         })
 
-const main = document.querySelector('main');
         
 
 
