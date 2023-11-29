@@ -2,8 +2,8 @@
   "scripts": {
     "tsc": "tsc -p ./ -w",
     "sass": "sass --watch src/sass:out/css",
-    "watch": "concurrently \"npm run tsc\" \"npm run sass\"",
-    "build": "esbuild ./src/ts/index.ts --bundle --outfile=build/out.js",
+    "watch": "concurrently \"npm run build\" \"npm run sass\"",
+    "build": "esbuild ./src/ts/index.ts --bundle --outfile=build/out.js --watch",
     "testbuild": "esbuild ./test/mocha/test.ts --bundle --outfile=test/mocha/tests.spec.js"
   },
   "dependencies": {
