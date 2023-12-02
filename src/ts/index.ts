@@ -374,7 +374,7 @@ for(const libraries of house){
 const body = document.querySelector('body')
 const main = document.querySelector('main');
 
-        main?.addEventListener('mousedown', () => { 
+        body?.addEventListener('mousedown', () => { 
             DOMremove_NewBookDiv()
         });
         main?.addEventListener('mouseover', ()=>{
@@ -479,11 +479,11 @@ const addBookBtn = document.getElementById('add-book')
                 whitelist: [""],
                 dropdown : selectTagify.tagifyDropdownSettings,
                 callbacks: {
-                    "input": (e:CustomEvent<Tagify.Tagify.TagData>) => {
-                        if(e.detail.value.length > 1){
+                    "input": (ev:CustomEvent<Tagify.Tagify.TagData>) => {
+                        if(ev.detail.value.length > 1){
                             titleSelect.loading(true).dropdown.hide()
 
-                            titleSelect.googleGET(e.detail.value)
+                            titleSelect.googleGET(ev.detail.value)
                                              .then((r)=>r.json())
                                              .then((data:googleResponse)=>{
                                                 const volumes : googleVolume [] = data.items 
@@ -500,7 +500,11 @@ const addBookBtn = document.getElementById('add-book')
                                              }).then((reformated : dropdownBooks[])=>{
                                                 
                                                 titleSelect.whitelist = reformated
-                                                titleSelect.loading(false).dropdown.show() 
+                                                titleSelect.loading(false).dropdown.show();
+                                                setTimeout(() => {
+                                                    console.log('stop');
+                                                }, 2000);
+                                                
                                              })
                         }
                     },
@@ -560,7 +564,7 @@ const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 
 function DOMremove_NewBookDiv(){
     const newBookDiv = document.getElementById('new-book-div')
-            const tagifyDropdown = document.querySelector('.tagify__dropdown')
+            const tagifyDropdown = document.querySelector('.tagify__dropdown');
             if(newBookDiv) main!.removeChild(newBookDiv);
             if(tagifyDropdown) body?.removeChild(tagifyDropdown);
             body?.classList.remove('opaque')

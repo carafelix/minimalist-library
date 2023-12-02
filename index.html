@@ -14,7 +14,10 @@
             <input type="button" id="new-library-btn" value="create library">
             <div id="libraries-div">
                 <template id="lib-template">
-                    <a href="#foo" id="foo-library" class="libraries">Foo Library</a>
+                    <div class="libraries-sub-div">
+                        <a href="#foo" id="foo-library" class="libraries-txt libraries">Foo Library</a>
+                        <a id="delete-foo" class="delete-library delete"><span class="material-symbols-rounded">delete</span></a>
+                    </div>
                 </template>
             </div>
         </nav>
