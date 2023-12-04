@@ -99,8 +99,21 @@ class House extends Array<Library>{
     public password? : string
     
     removeLibrary = (l:Library) => {
+        if(this.length === 1){
+            alert('Cannot delete your last library. Please add a new one and delete this one if you like')
+            return
+        };
         const index = this.indexOf(l);
-        this.splice(index,1);
+        if(index === -1) return;
+        const active = this.isActive(l);
+
+            this.splice(index,1);
+            this.popDOMlibrary(l);
+
+        if(active){
+            const newActiveLibraryAnchor = document.getElementById(`${this[this.length-1].nameToId()}-library`) as HTMLAnchorElement;
+            this.setActive(this[this.length-1], newActiveLibraryAnchor)
+        }
     }
     
     clearHouse = () => { // Removes all data
@@ -136,39 +149,33 @@ class House extends Array<Library>{
         const anchorTemplate = document.getElementById('lib-template') as HTMLTemplateElement;
               navUl?.appendChild(anchorTemplate.content.cloneNode(true));
 
-        const anchor = document.getElementById('foo-library') as HTMLAnchorElement;
+        const libraryAnchor = document.getElementById('foo-library') as HTMLAnchorElement;
 
-        anchor.setAttribute('href', `#${l.nameToId()}`);
-        anchor.setAttribute('id', `${l.nameToId()}-library`)
-        anchor.innerText = `${l.name} Library`
+        libraryAnchor.setAttribute('href', `#${l.nameToId()}`);
+        libraryAnchor.setAttribute('id', `${l.nameToId()}-library`)
+        libraryAnchor.innerText = `${l.name} Library`
 
-        anchor.addEventListener('click',() => {
-
-            this.sortHouseBySelectedLibrary(l);
-            this?.[0].DOMpopulateWithBooks()
-
-            const allAnchors = document.querySelectorAll('.libraries');
-
-            allAnchors.forEach( a => {
-                a.classList.remove('active')
-                a.parentElement?.classList.remove('active')
-            });
-
-            anchor.classList.add('active');
-            anchor.parentElement?.classList.add('active')
-            
+        libraryAnchor.addEventListener('mousedown',() => {
+            this.setActive(l,libraryAnchor)
         })
-        if(l === house[0]){ // set the first library as active when the DOM loads for the first time
-            anchor.classList.add('active')
-            anchor.parentElement?.classList.add('active')
+        const deleteBin = document.getElementById('delete-foo');
+                deleteBin?.setAttribute('id', `delete-${l.nameToId()}`)
+                deleteBin?.addEventListener('mousedown',()=>{
+                    this.removeLibrary(l)
+                })
+
+        if(l === this?.[0]){ // set the first library as active when the DOM loads for the first time
+            libraryAnchor.classList.add('active')
+            libraryAnchor.parentElement?.classList.add('active')
         }  
     }
 
     popDOMlibrary = (l:Library) => {
-        const domL = document.getElementById(l.nameToId());
-        if(!domL) return 'not okay';
-
-        navUl?.removeChild(domL)
+        const domL = document.getElementById(`delete-${l.nameToId()}`);
+        if(!domL) return console.error('Library ID doesnt exist');
+        const parentLi = domL.parentElement;
+        if(!parentLi) return console.error('There is no parent');
+        navUl?.removeChild(domL.parentElement)
     }
 
     isDuplicateLibrary = (inputName:string | null) => {
@@ -185,13 +192,30 @@ class House extends Array<Library>{
         localStorage.setItem('house', JSON.stringify(this));
     }
 
+    setActive = (l:Library, selectedLibrary: HTMLAnchorElement) => {
+        this.sortHouseBySelectedLibrary(l);
+        this?.[0].DOMpopulateWithBooks()
+
+        const allAnchors = document.querySelectorAll('.libraries');
+
+        allAnchors.forEach( a => {
+            a.classList.remove('active')
+            a.parentElement?.classList.remove('active')
+        });
+
+        selectedLibrary.classList.add('active');
+        selectedLibrary.parentElement?.classList.add('active')
+    }
+
     renameLibrary = () => {
 
     }
 
-    getIndexOfLibrary = () => {
-
+    isActive = (l:Library) => {
+        const selectedLibrary = document.getElementById(`${l.nameToId()}-library`);
+        return selectedLibrary?.classList.contains('active')
     }
+
     sortHouseBySelectedLibrary = (l:Library) => {
         this.sort((a,b)=>a===l ? -1 : 1);
     }
@@ -242,14 +266,16 @@ class Book{
     }
 
     fillDivWithBookValues = (idSelector : string, printAuthor? : boolean, printTitle? : boolean, bin? : boolean) => {
+        // The book instance should communicate directly with the view? should I decouple and this function return be handle by the library?
         const div = document.getElementById(idSelector);
         if(!div) return;
         div.innerHTML = '';
         
             // Book info should probably be changed to a ul with li instead of this funny string manipulation lol
+
         div.innerText = `\n${(printTitle) ? 'Title: ' + this.title + '\n' : ''}\
                         ${(printAuthor) ? 'Author: ' + this.author + '\n' : ''}\
-                        Pages: ${this.pages}\n\
+                        Pages: ${(this.pages)? this.pages : 'Unknown'}\n\
                         ${(this.genre)? `\nGenres: ${this.genre?.join(' ')}` : '' }\
                         ${(this.description)? `\nDescription:\n${this.briefDescription()}` : '' }`
 
@@ -374,7 +400,7 @@ class URLHouseParams extends URLSearchParams{
 
 
 import initialMainLibraryBooksJSON from './main_initial.json';
-import { log } from 'console';
+import { isatty } from 'tty';
 
 const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> new preBook(v.volumeInfo).googleVolumeInfoToBook())
 
@@ -383,13 +409,9 @@ const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> ne
 /** Main Flow **/
 
 const recievedURLParams = new URLHouseParams(window.location.search);
-const cachedHouse = JSON.parse(localStorage.getItem('house')!)
-console.log(cachedHouse);
-
-const mainLibrary = new Library('Main', placeholderBooks)
+const cachedHouse = JSON.parse(localStorage.getItem('house')!);
+const mainLibrary = new Library('Main', placeholderBooks); // Also used to reintroduce methods into cachedHouse
 export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
-
-console.log(house);
 
 
 // Reintroduce Classes into parsed objects from Cache or URL 
@@ -401,6 +423,8 @@ for(const libraries of house){
         Object.setPrototypeOf(book, Book.prototype)
     }
 }
+
+console.log(mainLibrary);
 
 // DOM declarations and manipulaiton
 const body = document.querySelector('body')

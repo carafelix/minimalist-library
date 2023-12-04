@@ -26,4 +26,6 @@ Licensed under [Creative Commons Attribution 4.0 International Public License](h
 - integrate imgur for img hosting
 - add ability to log custom books
 - active background should expand to the wold librarie sub-div to not exclude the delete bin
-- implement delete library button
+- fix parse house functions
+    - change how the House object is initialize, not to store the whole object but to just parse it storage and a stringify version of its contents???
+    - Parsing them into a new House instance should be done via the (...) operator. 
