@@ -64,17 +64,16 @@ class Library{
                 const y = mouse.clientY
                 if(!hoverBookDiv) return console.error('Hover Div is non existent');
 
-                book.fillDivWithBookValues('hover-book-div',true,true)
+                book.fillDivWithBookValues('hover-book-div',true,true,true)
                 hoverBookDiv.classList.remove('display-none')
                 hoverBookDiv.style.left=x+"px";
                 hoverBookDiv.style.top=y+"px";
                 
             });
-
-
-            
-
         });
+
+        house.saveHouse()
+
     }
 
     searchBookMatches = (searchInput : RegExp) : Array<Book["id"]> | null => {
@@ -99,39 +98,43 @@ class House extends Array<Library>{
     
     public password? : string
     
-    removeLibrary(l:Library){
+    removeLibrary = (l:Library) => {
         const index = this.indexOf(l);
         this.splice(index,1);
     }
     
-    clearHouse(){ // Removes all data
+    clearHouse = () => { // Removes all data
         localStorage.clear()
         window.location.reload();
     }
     
-    createLibrary (){
+    createLibrary = () => {
         if(house.length>=5){
             alert('Max Libraries amount reached')
             return
         }
-        let l;
-        do {
-            l = prompt('Input new library name');
-            if(l === 'foo') l = 'notFoo';
-        }
-        while(this.isDuplicateLibrary(l))
-        
-        if(!l) return;
+        let l = prompt('Input new library name');
 
+            if(this.isDuplicateLibrary(l)){
+                alert('Please input a non-duplicate library name')
+                return
+            } else if(!l?.replace(/\s/g,'').length){
+                alert('Please input a valid name')
+                return
+            } else if(!l) return;
+              else if(l === 'foo') l = 'notFoo';
+
+              l = l?.trim()
+        
         const newBornLibrary = new Library(l)
         this.push(newBornLibrary);
         
         return newBornLibrary
     } 
 
-    pushDOMlibrary (l:Library) {
+    pushDOMlibrary = (l:Library) => {
         const anchorTemplate = document.getElementById('lib-template') as HTMLTemplateElement;
-              nav?.appendChild(anchorTemplate.content.cloneNode(true));
+              navUl?.appendChild(anchorTemplate.content.cloneNode(true));
 
         const anchor = document.getElementById('foo-library') as HTMLAnchorElement;
 
@@ -148,22 +151,28 @@ class House extends Array<Library>{
 
             allAnchors.forEach( a => {
                 a.classList.remove('active')
+                a.parentElement?.classList.remove('active')
             });
 
-            anchor.classList.add('active')
+            anchor.classList.add('active');
+            anchor.parentElement?.classList.add('active')
+            
         })
-        if(l === house[0]) anchor.classList.add('active') // set the first library as active when the DOM loads for the first time
+        if(l === house[0]){ // set the first library as active when the DOM loads for the first time
+            anchor.classList.add('active')
+            anchor.parentElement?.classList.add('active')
+        }  
     }
 
-    popDOMlibrary(l:Library){
+    popDOMlibrary = (l:Library) => {
         const domL = document.getElementById(l.nameToId());
         if(!domL) return 'not okay';
 
-        nav?.removeChild(domL)
+        navUl?.removeChild(domL)
     }
 
-    isDuplicateLibrary(inputName:string | null){
-        if(!inputName) return false;
+    isDuplicateLibrary = (inputName:string | null) => {
+        if(!inputName) return true;
 
        for(const l of this){
         if(l.name == inputName){
@@ -171,6 +180,9 @@ class House extends Array<Library>{
         }
        }
         return false
+    }
+    saveHouse = () => {
+        localStorage.setItem('house', JSON.stringify(this));
     }
 
     renameLibrary = () => {
@@ -229,7 +241,7 @@ class Book{
         if(inputID === this.id) return this;
     }
 
-    fillDivWithBookValues = (idSelector : string, printAuthor? : boolean, printTitle? : boolean) => {
+    fillDivWithBookValues = (idSelector : string, printAuthor? : boolean, printTitle? : boolean, bin? : boolean) => {
         const div = document.getElementById(idSelector);
         if(!div) return;
         div.innerHTML = '';
@@ -240,8 +252,6 @@ class Book{
                         Pages: ${this.pages}\n\
                         ${(this.genre)? `\nGenres: ${this.genre?.join(' ')}` : '' }\
                         ${(this.description)? `\nDescription:\n${this.briefDescription()}` : '' }`
-
-         
 
         let imgEl = document.getElementById('book-img');
 
@@ -255,9 +265,25 @@ class Book{
             imgEl.setAttribute('src',this.img.href)
         }
 
+        if(bin){
+            const spanDeleteBin = document.createElement('span');
+            spanDeleteBin.classList.add('material-symbols-rounded');
+            spanDeleteBin.classList.add('delete')
+            spanDeleteBin.innerText = 'delete';
+            spanDeleteBin.addEventListener('mousedown', this.confirmBookDeletion)
+            div.appendChild(spanDeleteBin)
+        }
+
     }
-    private briefDescription = ()=> {
+    private briefDescription = () => {
         if(this.description) return this.description.split(' ').slice(0,25).join(' ') + '...';
+    }
+    private confirmBookDeletion = () => {
+        const confirm = window.confirm('You really want to remove this book from your library?')
+        if(!confirm) return;
+        
+        house[0].deleteBook(this);
+        house[0].DOMpopulateWithBooks
     }
 }
 
@@ -348,6 +374,7 @@ class URLHouseParams extends URLSearchParams{
 
 
 import initialMainLibraryBooksJSON from './main_initial.json';
+import { log } from 'console';
 
 const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> new preBook(v.volumeInfo).googleVolumeInfoToBook())
 
@@ -357,8 +384,13 @@ const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> ne
 
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!)
+console.log(cachedHouse);
+
 const mainLibrary = new Library('Main', placeholderBooks)
 export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
+
+console.log(house);
+
 
 // Reintroduce Classes into parsed objects from Cache or URL 
 
@@ -385,7 +417,7 @@ const main = document.querySelector('main');
         })
 
 const hidable = document.querySelectorAll('.hidable'),
-      nav = document.getElementById('libraries-div'),
+      navUl = document.getElementById('libraries-ul'),
       hoverBookDiv = document.getElementById('hover-book-div');
 
         hoverBookDiv?.addEventListener('mouseleave', (ev)=>{

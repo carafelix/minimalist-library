@@ -26,4 +26,4 @@ Licensed under [Creative Commons Attribution 4.0 International Public License](h
 - integrate imgur for img hosting
 - add ability to log custom books
 - active background should expand to the wold librarie sub-div to not exclude the delete bin
-- fix population and manipulation of books on changing active library
+- implement delete library button

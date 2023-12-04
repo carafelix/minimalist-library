@@ -12,14 +12,14 @@
     <main>
         <nav id="sidenav-library-selection" class="hidable hide">
             <input type="button" id="new-library-btn" value="create library">
-            <div id="libraries-div">
+                <ul id="libraries-ul">
                 <template id="lib-template">
-                    <div class="libraries-sub-div">
+                    <li class="libraries-li">
                         <a href="#foo" id="foo-library" class="libraries-txt libraries">Foo Library</a>
                         <a id="delete-foo" class="delete-library delete"><span class="material-symbols-rounded">delete</span></a>
-                    </div>
+                    </li>
                 </template>
-            </div>
+                </ul>
         </nav>
 
         <div id="stand" class="prevent-select hidable">
