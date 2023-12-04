@@ -92,6 +92,50 @@ class Library{
             return matches
         } else return null
     }
+
+    /**
+     * @param attribute is the selected value on the select input
+     * 0 = Title
+     * 1 = Author
+     * 2 = Read Status
+     * 3 = Pages
+     * 4 = Genre
+     */
+    sortBy = (attribute : number) => {
+        switch (attribute){
+            case 0:
+                this.storage.sort((a,b) => {
+                    return (a.title > b.title) ? 1 : -1
+                })
+                break;
+            case 1:
+                this.storage.sort((a,b) => {
+                    return (a.author > b.author) ? 1 : -1
+                })
+                break;
+            case 2:
+                this.storage.sort((a) => {
+                    return (a.read) ? 0 : 1
+                })
+                break;
+            case 3:
+                this.storage.sort((a,b) => {
+                    let aP = (a.pages) ? a.pages : 0;
+                    let bP = (b.pages) ? b.pages : 0;
+                    if(!a.pages) a
+                    return (aP > bP) ? 1 : -1
+                })
+                break;
+            case 4:
+                this.storage.sort((a,b) => {
+                    let aG = (a.genre?.[0]) ? a.genre?.[0] : '';
+                    let bG = (b.genre?.[0]) ? b.genre?.[0] : '';
+                    return (aG > bG) ? 1 : -1
+                })
+                break;
+        }
+        this.DOMpopulateWithBooks();
+    }
 }
 
 class House extends Array<Library>{
@@ -310,6 +354,7 @@ class Book{
         
         house[0].deleteBook(this);
         house[0].DOMpopulateWithBooks
+        house[0].sortBy(sortByBtn.selectedIndex)
     }
 }
 
@@ -467,6 +512,10 @@ const settingsBtn = document.getElementById('settings');
                 active = false
             }
         })
+const sortByBtn = document.getElementById('sort-by') as HTMLSelectElement;
+        sortByBtn?.addEventListener('input',()=>{
+            house[0].sortBy(sortByBtn.selectedIndex)
+        })
 
 // re-populate old libraries into nav
 
@@ -585,6 +634,8 @@ const addBookBtn = document.getElementById('add-book')
                 }
 
                 DOMremove_NewBookDiv();
+                
+                house[0].sortBy(sortByBtn.selectedIndex)
 
                 // refresh stand div 
                 
