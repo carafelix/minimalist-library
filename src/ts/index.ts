@@ -374,8 +374,8 @@ for(const libraries of house){
 const body = document.querySelector('body')
 const main = document.querySelector('main');
 
-        body?.addEventListener('mousedown', () => { 
-            DOMremove_NewBookDiv()
+        body?.addEventListener('mousedown', (ev) => { 
+            DOMremove_NewBookDiv(ev)
         });
         main?.addEventListener('mouseover', ()=>{
             hoverBookDiv?.classList.add('display-none')
@@ -465,7 +465,7 @@ const addBookBtn = document.getElementById('add-book')
             body?.classList.add('opaque')
             hidable?.forEach(n=>n.classList.add('hide'))
 
-            main?.appendChild(addBookTemplate.content.cloneNode(true))
+            body?.appendChild(addBookTemplate.content.cloneNode(true))
             const addBookDiv = document.getElementById('new-book-div');
                     addBookDiv?.addEventListener('mousedown', (ev) => ev.stopPropagation());
 
@@ -498,13 +498,12 @@ const addBookBtn = document.getElementById('add-book')
                                                     )
                                                 })
                                              }).then((reformated : dropdownBooks[])=>{
-                                                
                                                 titleSelect.whitelist = reformated
                                                 titleSelect.loading(false).dropdown.show();
-                                                setTimeout(() => {
-                                                    console.log('stop');
-                                                }, 2000);
-                                                
+                                                const dropdownItems = document.querySelectorAll('.tagify__dropdown__item')
+                                                    dropdownItems.forEach(el=>el.addEventListener('mousedown',(ev)=>ev.stopPropagation()));
+                                                    dropdownItems.forEach(el=>el.addEventListener('mouseup',(ev)=>ev.stopPropagation()));
+                                                    dropdownItems.forEach(el=>el.addEventListener('click',(ev)=>ev.stopPropagation()));
                                              })
                         }
                     },
@@ -512,7 +511,6 @@ const addBookBtn = document.getElementById('add-book')
                         if(!titleSelect.value[0]) return;
                         titleSelect.value[0].googleVolumeInfoToBook().fillDivWithBookValues('book-info')
                     }
-                    
                 }
             })
 
@@ -562,10 +560,12 @@ const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 
 // DOM FUNCTIONS
 
-function DOMremove_NewBookDiv(){
+function DOMremove_NewBookDiv(ev?:MouseEvent){
+    const target = ev?.target as HTMLDivElement
+    if(target?.className == "tagify__dropdown__item tagify__dropdown__item--active tagify__dropdown__item--hidden") return;
     const newBookDiv = document.getElementById('new-book-div')
             const tagifyDropdown = document.querySelector('.tagify__dropdown');
-            if(newBookDiv) main!.removeChild(newBookDiv);
+            if(newBookDiv) body!.removeChild(newBookDiv);
             if(tagifyDropdown) body?.removeChild(tagifyDropdown);
             body?.classList.remove('opaque')
             hidable?.forEach(n=>n.classList.remove('hide'))
