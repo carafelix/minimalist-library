@@ -1,6 +1,6 @@
 {
   "kind": "books#volumes",
-  "totalItems": 10,
+  "totalItems": 12,
   "items": [
     {
       "kind": "books#volume",
@@ -698,37 +698,31 @@
     },
     {
       "kind": "books#volume",
-      "id": "9h-wPAAACAAJ",
-      "etag": "m9Mv/cbo3A0",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/9h-wPAAACAAJ",
+      "id": "rCDJuQEACAAJ",
+      "etag": "1HXCMobprdU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/rCDJuQEACAAJ",
       "volumeInfo": {
-        "title": "Remembrance of Things Past, Part One Combray",
-        "authors": [
-          "Marcel Proust"
-        ],
-        "publishedDate": "2001-01-01",
+        "title": "Antología rokhiana",
+        "authors": ["Pablo de Rokha"],
+        "publishedDate": "2016",
         "industryIdentifiers": [
-          {
-            "type": "ISBN_10",
-            "identifier": "0605010765"
-          },
-          {
-            "type": "ISBN_13",
-            "identifier": "9780605010765"
-          }
+          { "type": "ISBN_10", "identifier": "9568268995" },
+          { "type": "ISBN_13", "identifier": "9789568268992" }
         ],
-        "readingModes": {
-          "text": false,
-          "image": false
-        },
+        "readingModes": { "text": false, "image": false },
+        "pageCount": 400,
         "printType": "BOOK",
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": false,
         "contentVersion": "preview-1.0.0",
-        "language": "en",
-        "previewLink": "http://books.google.cl/books?id=9h-wPAAACAAJ&dq=intitle:Combray+inauthor:proust&hl=&cd=2&source=gbs_api",
-        "infoLink": "http://books.google.cl/books?id=9h-wPAAACAAJ&dq=intitle:Combray+inauthor:proust&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Remembrance_of_Things_Past_Part_One_Comb.html?hl=&id=9h-wPAAACAAJ"
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=rCDJuQEACAAJ&dq=isbn:9789568268992&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=rCDJuQEACAAJ&dq=isbn:9789568268992&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Antolog%C3%ADa_rokhiana.html?hl=&id=rCDJuQEACAAJ"
       },
       "saleInfo": {
         "country": "CL",
@@ -741,15 +735,72 @@
         "embeddable": false,
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=9h-wPAAACAAJ&hl=&source=gbs_api",
+        "epub": { "isAvailable": false },
+        "pdf": { "isAvailable": false },
+        "webReaderLink": "http://play.google.com/books/reader?id=rCDJuQEACAAJ&hl=&source=gbs_api",
         "accessViewStatus": "NONE",
         "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "1ckwlhyxDP0C",
+      "etag": "JFDkoL7E+UE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1ckwlhyxDP0C",
+      "volumeInfo": {
+        "title": "Paradiso",
+        "subtitle": "edición crítica",
+        "authors": ["José Lezama Lima"],
+        "publisher": "Editorial Universidad de Costa Rica",
+        "publishedDate": "1996",
+        "description": "Paradiso es, en principio, el viaje ritual que Dante Alighieri cumple en la Divina Comedia, al tener que descender a los infiernos Para luego reaparecer dejando en prenda su luz en la oscuridad. Esto hace de Paradiso una obra aut nticamente dentro de la tradici n rfica. la edici n cr tica de esta obra fundamental de la literatura latinoamericana est coordinada por Cintio Vitier y participan en el an lisis de la obra: Ciro Bianchi Ross, Raquel Carri , Julio Ortega, Benito Pelegr n, Severo Sarduy, Justo C. Ulloa y Mar a Zambrano, entre otros.",
+        "industryIdentifiers": [
+          { "type": "ISBN_10", "identifier": "8489666024" },
+          { "type": "ISBN_13", "identifier": "9788489666023" }
+        ],
+        "readingModes": { "text": false, "image": true },
+        "pageCount": 872,
+        "printType": "BOOK",
+        "averageRating": 4,
+        "ratingsCount": 3,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "3.6.4.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1ckwlhyxDP0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1ckwlhyxDP0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.cl/books?id=1ckwlhyxDP0C&printsec=frontcover&dq=Lezama+Lima+Paradiso&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.cl/books?id=1ckwlhyxDP0C&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Paradiso.html?hl=&id=1ckwlhyxDP0C"
+      },
+      "saleInfo": {
+        "country": "CL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "CL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": { "isAvailable": false },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.cl/books/download/Paradiso-sample-pdf.acsm?id=1ckwlhyxDP0C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1ckwlhyxDP0C&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Paradiso es, en principio, el viaje ritual que Dante Alighieri cumple en la Divina Comedia, al tener que descender a los infiernos Para luego reaparecer dejando en prenda su luz en la oscuridad."
       }
     }
   ]

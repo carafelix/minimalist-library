@@ -2993,7 +2993,7 @@
   // src/ts/main_initial.json
   var main_initial_default = {
     kind: "books#volumes",
-    totalItems: 10,
+    totalItems: 12,
     items: [
       {
         kind: "books#volume",
@@ -3548,81 +3548,6 @@
       },
       {
         kind: "books#volume",
-        id: "sCxaDwAAQBAJ",
-        etag: "uzCm6E2wdII",
-        selfLink: "https://www.googleapis.com/books/v1/volumes/sCxaDwAAQBAJ",
-        volumeInfo: {
-          title: "Diadem: Selected Poems",
-          authors: [
-            "Marosa di Giorgio"
-          ],
-          publisher: "BOA Editions, Ltd.",
-          publishedDate: "2012-10-16",
-          description: `Marosa di Giorgio has one of the most distinct and recognizable voices in Latin American poetry. Her surreal and fable-like prose poems invite comparison to Franz Kafka, Julio Cort\xE1zar, or even contemporary American poets Russell Edson and Charles Simic. But di Giorgio's voice, imagery, and themes\u2014childhood, the Uruguayan countryside, a perception of the sacred\u2014are her own. Previously written off as "the mad woman of Uruguayan letters," di Giorgio's reputation has blossomed in recent years. Translator Adam Giannelli's careful selection of poems spans the enormous output of di Giorgio's career to help further introduce English-language readers to this vibrant and original voice. Marosa di Giorgio was born in Salto, Uruguay, in 1932. Her first book Poemas was published in 1953. Also a theater actress, she moved to Montevideo in 1978, where she lived until her death in 2004.`,
-          industryIdentifiers: [
-            {
-              type: "ISBN_13",
-              identifier: "9781934414989"
-            },
-            {
-              type: "ISBN_10",
-              identifier: "1934414980"
-            }
-          ],
-          readingModes: {
-            text: true,
-            image: true
-          },
-          pageCount: 170,
-          printType: "BOOK",
-          categories: [
-            "Poetry"
-          ],
-          maturityRating: "NOT_MATURE",
-          allowAnonLogging: false,
-          contentVersion: "1.1.2.0.preview.3",
-          panelizationSummary: {
-            containsEpubBubbles: false,
-            containsImageBubbles: false
-          },
-          imageLinks: {
-            smallThumbnail: "http://books.google.com/books/content?id=sCxaDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            thumbnail: "http://books.google.com/books/content?id=sCxaDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-          },
-          language: "en",
-          previewLink: "http://books.google.cl/books?id=sCxaDwAAQBAJ&pg=PT19&dq=inauthor:marosa+di+giorgio&hl=&cd=9&source=gbs_api",
-          infoLink: "http://books.google.cl/books?id=sCxaDwAAQBAJ&dq=inauthor:marosa+di+giorgio&hl=&source=gbs_api",
-          canonicalVolumeLink: "https://books.google.com/books/about/Diadem_Selected_Poems.html?hl=&id=sCxaDwAAQBAJ"
-        },
-        saleInfo: {
-          country: "CL",
-          saleability: "NOT_FOR_SALE",
-          isEbook: false
-        },
-        accessInfo: {
-          country: "CL",
-          viewability: "PARTIAL",
-          embeddable: true,
-          publicDomain: false,
-          textToSpeechPermission: "ALLOWED",
-          epub: {
-            isAvailable: true,
-            acsTokenLink: "http://books.google.cl/books/download/Diadem_Selected_Poems-sample-epub.acsm?id=sCxaDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-          },
-          pdf: {
-            isAvailable: true,
-            acsTokenLink: "http://books.google.cl/books/download/Diadem_Selected_Poems-sample-pdf.acsm?id=sCxaDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-          },
-          webReaderLink: "http://play.google.com/books/reader?id=sCxaDwAAQBAJ&hl=&source=gbs_api",
-          accessViewStatus: "SAMPLE",
-          quoteSharingAllowed: false
-        },
-        searchInfo: {
-          textSnippet: "... <b>di Giorgio</b> and Edgardo Russo (Buenos Aires: El Cuenco de Plata, 2010), 40. 3. Ibid., 72. 4. C\xE9sar Aira, Diccionario de autores latinoamericanos, 174. 5. Marosa <b>di Giorgio</b>, No develar\xE1s el misterio, 41, 76. 6. Russell Edson, \u201CThe Prose&nbsp;..."
-        }
-      },
-      {
-        kind: "books#volume",
         id: "oMJFAQAAIAAJ",
         etag: "YD1v5kLoW7U",
         selfLink: "https://www.googleapis.com/books/v1/volumes/oMJFAQAAIAAJ",
@@ -3766,37 +3691,31 @@
       },
       {
         kind: "books#volume",
-        id: "9h-wPAAACAAJ",
-        etag: "m9Mv/cbo3A0",
-        selfLink: "https://www.googleapis.com/books/v1/volumes/9h-wPAAACAAJ",
+        id: "rCDJuQEACAAJ",
+        etag: "1HXCMobprdU",
+        selfLink: "https://www.googleapis.com/books/v1/volumes/rCDJuQEACAAJ",
         volumeInfo: {
-          title: "Remembrance of Things Past, Part One Combray",
-          authors: [
-            "Marcel Proust"
-          ],
-          publishedDate: "2001-01-01",
+          title: "Antolog\xEDa rokhiana",
+          authors: ["Pablo de Rokha"],
+          publishedDate: "2016",
           industryIdentifiers: [
-            {
-              type: "ISBN_10",
-              identifier: "0605010765"
-            },
-            {
-              type: "ISBN_13",
-              identifier: "9780605010765"
-            }
+            { type: "ISBN_10", identifier: "9568268995" },
+            { type: "ISBN_13", identifier: "9789568268992" }
           ],
-          readingModes: {
-            text: false,
-            image: false
-          },
+          readingModes: { text: false, image: false },
+          pageCount: 400,
           printType: "BOOK",
           maturityRating: "NOT_MATURE",
           allowAnonLogging: false,
           contentVersion: "preview-1.0.0",
-          language: "en",
-          previewLink: "http://books.google.cl/books?id=9h-wPAAACAAJ&dq=intitle:Combray+inauthor:proust&hl=&cd=2&source=gbs_api",
-          infoLink: "http://books.google.cl/books?id=9h-wPAAACAAJ&dq=intitle:Combray+inauthor:proust&hl=&source=gbs_api",
-          canonicalVolumeLink: "https://books.google.com/books/about/Remembrance_of_Things_Past_Part_One_Comb.html?hl=&id=9h-wPAAACAAJ"
+          panelizationSummary: {
+            containsEpubBubbles: false,
+            containsImageBubbles: false
+          },
+          language: "es",
+          previewLink: "http://books.google.cl/books?id=rCDJuQEACAAJ&dq=isbn:9789568268992&hl=&cd=1&source=gbs_api",
+          infoLink: "http://books.google.cl/books?id=rCDJuQEACAAJ&dq=isbn:9789568268992&hl=&source=gbs_api",
+          canonicalVolumeLink: "https://books.google.com/books/about/Antolog%C3%ADa_rokhiana.html?hl=&id=rCDJuQEACAAJ"
         },
         saleInfo: {
           country: "CL",
@@ -3809,15 +3728,72 @@
           embeddable: false,
           publicDomain: false,
           textToSpeechPermission: "ALLOWED",
-          epub: {
-            isAvailable: false
-          },
-          pdf: {
-            isAvailable: false
-          },
-          webReaderLink: "http://play.google.com/books/reader?id=9h-wPAAACAAJ&hl=&source=gbs_api",
+          epub: { isAvailable: false },
+          pdf: { isAvailable: false },
+          webReaderLink: "http://play.google.com/books/reader?id=rCDJuQEACAAJ&hl=&source=gbs_api",
           accessViewStatus: "NONE",
           quoteSharingAllowed: false
+        }
+      },
+      {
+        kind: "books#volume",
+        id: "1ckwlhyxDP0C",
+        etag: "JFDkoL7E+UE",
+        selfLink: "https://www.googleapis.com/books/v1/volumes/1ckwlhyxDP0C",
+        volumeInfo: {
+          title: "Paradiso",
+          subtitle: "edici\xF3n cr\xEDtica",
+          authors: ["Jos\xE9 Lezama Lima"],
+          publisher: "Editorial Universidad de Costa Rica",
+          publishedDate: "1996",
+          description: "Paradiso es, en principio, el viaje ritual que Dante Alighieri cumple en la Divina Comedia, al tener que descender a los infiernos Para luego reaparecer dejando en prenda su luz en la oscuridad. Esto hace de Paradiso una obra aut nticamente dentro de la tradici n rfica. la edici n cr tica de esta obra fundamental de la literatura latinoamericana est coordinada por Cintio Vitier y participan en el an lisis de la obra: Ciro Bianchi Ross, Raquel Carri , Julio Ortega, Benito Pelegr n, Severo Sarduy, Justo C. Ulloa y Mar a Zambrano, entre otros.",
+          industryIdentifiers: [
+            { type: "ISBN_10", identifier: "8489666024" },
+            { type: "ISBN_13", identifier: "9788489666023" }
+          ],
+          readingModes: { text: false, image: true },
+          pageCount: 872,
+          printType: "BOOK",
+          averageRating: 4,
+          ratingsCount: 3,
+          maturityRating: "NOT_MATURE",
+          allowAnonLogging: false,
+          contentVersion: "3.6.4.0.preview.1",
+          panelizationSummary: {
+            containsEpubBubbles: false,
+            containsImageBubbles: false
+          },
+          imageLinks: {
+            smallThumbnail: "http://books.google.com/books/content?id=1ckwlhyxDP0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            thumbnail: "http://books.google.com/books/content?id=1ckwlhyxDP0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          },
+          language: "es",
+          previewLink: "http://books.google.cl/books?id=1ckwlhyxDP0C&printsec=frontcover&dq=Lezama+Lima+Paradiso&hl=&cd=1&source=gbs_api",
+          infoLink: "http://books.google.cl/books?id=1ckwlhyxDP0C&dq=Lezama+Lima+Paradiso&hl=&source=gbs_api",
+          canonicalVolumeLink: "https://books.google.com/books/about/Paradiso.html?hl=&id=1ckwlhyxDP0C"
+        },
+        saleInfo: {
+          country: "CL",
+          saleability: "NOT_FOR_SALE",
+          isEbook: false
+        },
+        accessInfo: {
+          country: "CL",
+          viewability: "PARTIAL",
+          embeddable: true,
+          publicDomain: false,
+          textToSpeechPermission: "ALLOWED",
+          epub: { isAvailable: false },
+          pdf: {
+            isAvailable: true,
+            acsTokenLink: "http://books.google.cl/books/download/Paradiso-sample-pdf.acsm?id=1ckwlhyxDP0C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          },
+          webReaderLink: "http://play.google.com/books/reader?id=1ckwlhyxDP0C&hl=&source=gbs_api",
+          accessViewStatus: "SAMPLE",
+          quoteSharingAllowed: false
+        },
+        searchInfo: {
+          textSnippet: "Paradiso es, en principio, el viaje ritual que Dante Alighieri cumple en la Divina Comedia, al tener que descender a los infiernos Para luego reaparecer dejando en prenda su luz en la oscuridad."
         }
       }
     ]
