@@ -1,7 +1,7 @@
 <div align="center"> 
 <h1>Minimalist Library</h1>
 <h2><em>Books Books Books</em></h2>
-<img src="./" width="750">
+<img src="./assets/output.gif" width="750">
 </div>
 </br>
 
@@ -19,7 +19,6 @@
 ## Showcase 
 
 ![](./assets/library-flow.jpg)
-![](./)
 
 Project assignment from [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-library)
 
@@ -31,10 +30,14 @@ Licensed under [Creative Commons Attribution 4.0 International Public License](h
 
 - Do not build a feature (in this case was a function to retrieve the house object internals from URLsearchParams) without having finished the actual object it consumes 
 
+## to-do
+
+- Add interval time limit to Google API calls 
+
 ## leftovers
 
 - add ability to log custom books
 - integrate imgur for img hosting for custom book covers
-- integrate github gist's as a quirky api of house obj data. Using gist's id's for posting an retrieving house obj data, in conjuntion with URLsearchParams for building extraction of data with no backend required for free
-- clipboard api for importing and exporing urlparams
+- integrate github gist's as a quirky api of house obj data. Using gist's id's for posting an retrieving house obj data, in conjunction with URLsearchParams for building extraction of data with no backend required for free
+- clipboard api for importing and exporting URLparams
 
