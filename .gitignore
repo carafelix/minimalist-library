@@ -1,13 +1,6 @@
-dist
-out
 node_modules
 package-lock.json
 tmp
 *.dtmp
 *.bkp
-build/out.js
-out_copy.js
-tests.spec.js
-mocha.js
-mocha.css
 /test/mocha/index.html
