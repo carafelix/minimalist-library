@@ -1,6 +1,6 @@
 import Tagify from 'tagify';
 
-localStorage.clear()
+// localStorage.clear()
 class Library{
     public storage : Book[]
     constructor(
@@ -356,6 +356,11 @@ class Book{
         house[0].DOMpopulateWithBooks
         house[0].sortBy(sortByBtn.selectedIndex)
     }
+    checkValidBook = () => {
+       if (this.title !== undefined && this.author !== undefined && this.read !== undefined && this.img !== undefined){
+        return true
+       } return false
+    }
 }
 
 class selectTagify extends Tagify{
@@ -445,7 +450,7 @@ class URLHouseParams extends URLSearchParams{
 
 
 import initialMainLibraryBooksJSON from './main_initial.json';
-import { isatty } from 'tty';
+import { log } from 'util';
 
 const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> new preBook(v.volumeInfo).googleVolumeInfoToBook())
 
@@ -454,9 +459,38 @@ const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> ne
 /** Main Flow **/
 
 const recievedURLParams = new URLHouseParams(window.location.search);
-const cachedHouse = JSON.parse(localStorage.getItem('house')!);
-const mainLibrary = new Library('Main', placeholderBooks); // Also used to reintroduce methods into cachedHouse
-export const house : House = ( recievedURLParams.isHouse() || cachedHouse || new House(mainLibrary) )
+const cachedHouse = JSON.parse(localStorage.getItem('house')!); // fake-house, no methods but possibly contains data
+const mainLibrary = new Library('Main', placeholderBooks);
+export const house : House = ( recievedURLParams.isHouse() || cachedHouseIsValidHouse(cachedHouse) || new House(mainLibrary) )
+
+// re-introduce methods and format
+
+function cachedHouseIsValidHouse(cachedHouse : any[]) : House | null{
+    if (!cachedHouse?.[0].name) return null;
+    const reParsedHouse = new House(...cachedHouse.map((cachedLibrary) => new Library(cachedLibrary.name)))
+
+    for(const library in cachedHouse){
+        for(const cachedBook of cachedHouse[library].storage){
+
+                const currentBook = new Book(cachedBook?.title,
+                                            cachedBook?.author,
+                                            cachedBook?.read,
+                                            cachedBook?.img,
+                                            cachedBook?.pages,
+                                            cachedBook?.genre,
+                                            cachedBook?.isbn,
+                                            cachedBook?.description);
+                                            
+                reParsedHouse[library].storage.push(currentBook)
+
+            // check validity of the current cachedBook
+                    if(!currentBook.checkValidBook()){
+                        return null
+                    }
+        }
+    }
+    return reParsedHouse
+}
 
 
 // Reintroduce Classes into parsed objects from Cache or URL 
@@ -468,8 +502,6 @@ for(const libraries of house){
         Object.setPrototypeOf(book, Book.prototype)
     }
 }
-
-console.log(mainLibrary);
 
 // DOM declarations and manipulaiton
 const body = document.querySelector('body')
