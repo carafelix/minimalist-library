@@ -50,8 +50,6 @@ class Library{
         })
 
         const emptyBooks = document.querySelectorAll('.book');
-        
-
 
         this.storage.forEach((book,i) => {
             emptyBooks[i].setAttribute('data-id', book.id);
@@ -185,7 +183,7 @@ class House extends Array<Library>{
         
         const newBornLibrary = new Library(l)
         this.push(newBornLibrary);
-        
+        this.saveHouse()
         return newBornLibrary
     } 
 
@@ -262,19 +260,6 @@ class House extends Array<Library>{
 
     sortHouseBySelectedLibrary = (l:Library) => {
         this.sort((a,b)=>a===l ? -1 : 1);
-    }
-
-    setPassword = (pass:string) => {
-        this.password = pass
-    }
-    changePassword = (pass:string) => {
-    }
-
-    deletePassword = () => {
-        this.password = undefined
-    }
-    forgotPassword = () => {
-
     }
 }
 
@@ -466,8 +451,6 @@ function composeHouseAndCheckValidity(cachedHouse : any[]) : House | null{
 
     for(const library in cachedHouse){
         for(const cachedBook of cachedHouse[library].storage){
-            console.log(typeof cachedBook.img);
-            
 
                 const currentBook = new Book(cachedBook?.title,
                                             cachedBook?.author,
@@ -684,11 +667,9 @@ const tagifyDropdownSettings = {
 
 
 
-/** Setters for house retrieval from url/cache **/
+/** Setters for house retrieval from cache **/
 
 localStorage.setItem('house', JSON.stringify(house)); // cache
-
-const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
 
 /** Functions **/
 
@@ -704,27 +685,3 @@ function DOMremove_NewBookDiv(ev?:MouseEvent){
             body?.classList.remove('opaque')
             hidable?.forEach(n=>n.classList.remove('hide'))
 }
-
-
-async function digestPassword(password:string) { // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
-
-    const msgUint8 = new TextEncoder().encode(password);                      // encode as (utf-8) Uint8Array
-    const hashBuffer = await crypto.subtle.digest("SHA-256", msgUint8);       // hash the message
-    const hashArray = Array.from(new Uint8Array(hashBuffer));                 // convert buffer to byte array
-    const hashHex = hashArray
-                              .map((b) => b.toString(16))//.padStart(2, "0"))
-                              .join("");                                      // convert bytes to hex string
-    return hashHex;
-  }
-
-  function shortlifyURL(url:URL) {
-    url.href
-  }
-
-  
-
-
-  // data
-
-const bookGenres = ["Mystery","Thriller","Science Fiction","Fantasy","Romance","Historical Fiction","Biography","Autobiography","Memoir","Self-Help","Travel","Science","Dystopian","Adventure","Children's Literature","Young Adult","Classic","Poetry","Drama","Comedy","Satire","Crime","Suspense","Detective","Espionage","Legal","Psychological","Gothic","Paranormal","Horror","Space Opera","Cyberpunk","Alternate History","Time Travel","High Fantasy","Urban Fantasy","Epic Fantasy","Historical Fantasy","Magical Realism","Fairy Tales","Mythology","Philosophy","Religion","Spirituality","Cookbooks","Essays","History","Psychology","Sociology","Politics","Economics","True Crime","Sports","Art","Music","Film","Fashion","Food and Drink","Technology","Computer Science","Mathematics","Astronomy","Biology","Chemistry","Physics","Environmental Science","Cultural Studies","Literary Theory","Gender Studies","Race and Ethnicity","LGBT+ Studies","Political Science","Autobiography","Biography","Memoir","Letters","Diaries","Essay","Speech","Lecture","Sermon","Journalism","Reference","Encyclopedia","Dictionaries"];
-
