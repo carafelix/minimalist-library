@@ -423,7 +423,7 @@ class dropdownBooks extends preBook{
 
 
 class URLHouseParams extends URLSearchParams{
-    isHouse = () =>{    // TO-DO check every function inside every librarie and book to match the prototype
+    isHouse = () => {
         const encodedStr = this.get('house')
         if(!encodedStr) return false;
         const decodedStr = decodeURIComponent(encodedStr);
@@ -435,22 +435,17 @@ class URLHouseParams extends URLSearchParams{
                 return false;
             }
         }
-        const house = JSON.parse(decodedStr);
+        const tentativeUrlHouse = JSON.parse(decodedStr);
+
+        console.log(tentativeUrlHouse);
+        
     
-        for(const room of house){
-            if(typeof room.name !== 'string'        ||
-               room.storage.constructor !== Array   ||
-               room.check !== Library.toString()){
-                return false
-            }
-        }
-        return house
+        return composeHouseAndCheckValidity(tentativeUrlHouse)
     }
 }
 
 
 import initialMainLibraryBooksJSON from './main_initial.json';
-import { log } from 'util';
 
 const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> new preBook(v.volumeInfo).googleVolumeInfoToBook())
 
@@ -461,21 +456,23 @@ const placeholderBooks : Book[] = initialMainLibraryBooksJSON.items.map((v)=> ne
 const recievedURLParams = new URLHouseParams(window.location.search);
 const cachedHouse = JSON.parse(localStorage.getItem('house')!); // fake-house, no methods but possibly contains data
 const mainLibrary = new Library('Main', placeholderBooks);
-export const house : House = ( recievedURLParams.isHouse() || cachedHouseIsValidHouse(cachedHouse) || new House(mainLibrary) )
+export const house : House = ( recievedURLParams.isHouse() || composeHouseAndCheckValidity(cachedHouse) || new House(mainLibrary) )
 
 // re-introduce methods and format
 
-function cachedHouseIsValidHouse(cachedHouse : any[]) : House | null{
+function composeHouseAndCheckValidity(cachedHouse : any[]) : House | null{
     if (!cachedHouse?.[0].name) return null;
     const reParsedHouse = new House(...cachedHouse.map((cachedLibrary) => new Library(cachedLibrary.name)))
 
     for(const library in cachedHouse){
         for(const cachedBook of cachedHouse[library].storage){
+            console.log(typeof cachedBook.img);
+            
 
                 const currentBook = new Book(cachedBook?.title,
                                             cachedBook?.author,
                                             cachedBook?.read,
-                                            cachedBook?.img,
+                                            new URL(cachedBook?.img),
                                             cachedBook?.pages,
                                             cachedBook?.genre,
                                             cachedBook?.isbn,
@@ -692,8 +689,6 @@ const tagifyDropdownSettings = {
 localStorage.setItem('house', JSON.stringify(house)); // cache
 
 const encodedHouse = encodeURIComponent(JSON.stringify(house)) // url
-
-
 
 /** Functions **/
 
