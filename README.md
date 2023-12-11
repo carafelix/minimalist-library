@@ -15,6 +15,7 @@
 - Multiple library management
 - Fluent libraries / Books addition and removal
 - OOP design that conveniently and easily links data objects with DOM nodes
+- Esbuild bundle
 
 ## Showcase 
 
