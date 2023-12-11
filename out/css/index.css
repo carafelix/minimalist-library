@@ -1086,4 +1086,11 @@ nav #new-library-btn {
   cursor: pointer;
 }
 
+#github {
+  grid-column-start: 3;
+}
+#github img {
+  width: 30px;
+}
+
 /*# sourceMappingURL=index.css.map */

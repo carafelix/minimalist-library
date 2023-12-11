@@ -253,3 +253,9 @@ nav{
     user-select: none;
     cursor: pointer;
 }
+#github{
+    grid-column-start: 3;
+    img{
+        width: 30px;
+    }
+}
