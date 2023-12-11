@@ -10,4 +10,5 @@ out_copy.js
 tests.spec.js
 mocha.js
 mocha.css
+_tagify.scss
 /test/mocha/index.html
