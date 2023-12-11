@@ -10,7 +10,7 @@
 - Pure Typescript SPA
 - Persistent storage using LocalStorage
 - Google Books API import
-- Dynamically loaded suggestion list for book addition (Uses Tagify Library)
+- Dynamically loaded search results for book addition (Uses Tagify Library)
 - Minimalist layout based on real book stands with ability to sort by multiple parameters (Styling was NOT the focus on this project)
 - Multiple library management
 - Fluent libraries / Books addition and removal
