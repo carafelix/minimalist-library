@@ -156,6 +156,7 @@ class House extends Array<Library>{
             const newActiveLibraryAnchor = document.getElementById(`${this[this.length-1].nameToId()}-library`) as HTMLAnchorElement;
             this.setActive(this[this.length-1], newActiveLibraryAnchor)
         }
+        this.saveHouse()
     }
     
     clearHouse = () => { // Removes all data
