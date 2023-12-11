@@ -7,12 +7,16 @@
 
 ## Features
 
-- URl import of the site state with checker (isHouse) function
-- Librarie can be lock behind passwords
+- Persistent storage using LocalStorage
 - Google Books API import
+- Minimalist layout based on real book stands with ability to sort by multiple parameters (Styling was NOT the focus on this proyect)
+- Multiple library management
+- Fluent libraries / Books addition and removal
+- OOP design that conveniently and easily links data objects with DOM nodes
 
 ## Showcase 
 
+![](./assets/library-flow.jpg)
 ![](./)
 
 Proyect assignment from [The Odin Proyect](https://www.theodinproject.com/lessons/node-path-javascript-library)
@@ -23,14 +27,12 @@ Licensed under [Creative Commons Attribution 4.0 International Public License](h
 
 ## Learnt
 
-- Do not build a feature (in this case was a function to retrieve the house object internals) without having finished the actual object it consumes 
+- Do not build a feature (in this case was a function to retrieve the house object internals from URLsearchParams) without having finished the actual object it consumes 
 
-## todo
-- integrate bit.ly for long url
-- integrate imgur for img hosting
+## leftovers
+
 - add ability to log custom books
-- active background should expand to the wold librarie sub-div to not exclude the delete bin
-- fix parse house functions
-    - change how the House object is initialize, not to store the whole object but to just parse it storage and a stringify version of its contents???
-    - Parsing them into a new House instance should be done via the (...) operator.
+- integrate imgur for img hosting for custom book covers
+- integrate github gist's as a quirky api of house obj data. Using gist's id's for posting an retrieving house obj data, in conjuntion with URLsearchParams for building extraction of data with no backend required for free
+- clipboard api for importing and exporing urlparams
 

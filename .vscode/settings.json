@@ -12,5 +12,6 @@
     "hide-files.files": [
         ".$library-flow.drawio.dtmp",
         ".$library-flow.drawio.bkp"
-    ]
+    ],
+    "cSpell.enabled": true
 }
