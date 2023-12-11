@@ -7,9 +7,11 @@
 
 ## Features
 
+- Pure Typescript SPA
 - Persistent storage using LocalStorage
 - Google Books API import
-- Minimalist layout based on real book stands with ability to sort by multiple parameters (Styling was NOT the focus on this proyect)
+- Dynamically loaded suggestion list for book addition (Uses Tagify Library)
+- Minimalist layout based on real book stands with ability to sort by multiple parameters (Styling was NOT the focus on this project)
 - Multiple library management
 - Fluent libraries / Books addition and removal
 - OOP design that conveniently and easily links data objects with DOM nodes
@@ -19,7 +21,7 @@
 ![](./assets/library-flow.jpg)
 ![](./)
 
-Proyect assignment from [The Odin Proyect](https://www.theodinproject.com/lessons/node-path-javascript-library)
+Project assignment from [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-library)
 
 ## License
 
