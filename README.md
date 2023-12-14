@@ -29,11 +29,12 @@ Licensed under [Creative Commons Attribution 4.0 International Public License](h
 
 ## Learnt
 
-- Do not build a feature (in this case was a function to retrieve the house object internals from URLsearchParams) without having finished the actual object it consumes 
+- Do not build a feature (in this case was a function to retrieve the house object internals from URLsearchParams) without having finished the actual object it consumes. This was especially important since I only realized afterwards that there is a max header length for url params, so retrieving long strings of information was not feasible. It is only worth it to retrieve and share internal state via URLparams if the data it mimics it can be concise enough. Data points that are later processed are fine, but must be 2000 chars long max. 
 
 ## to-do
 
 - Add interval time limit to Google API calls 
+- remove shadow / repeat name variables
 
 ## leftovers
 
